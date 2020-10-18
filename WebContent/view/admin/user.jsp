@@ -49,12 +49,12 @@
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/admin/user/delete?user-id=">Remove</a>
+														href="${pageContext.request.contextPath}/admin/user/delete?user-email=${user.email}">Remove</a>
 												</button>
 
 												<button class="btn btn-success">
 													<a
-														href="${pageContext.request.contextPath}/admin/user/edit?user-id=">Edit</a>
+														href="${pageContext.request.contextPath}/admin/user/edit?user-email=${user.email}">Edit</a>
 												</button>
 											</td>
 										</tr>

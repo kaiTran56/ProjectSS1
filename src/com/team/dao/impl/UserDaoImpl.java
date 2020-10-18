@@ -114,12 +114,12 @@ public class UserDaoImpl extends JDBCConnection implements UserDao<User> {
 	}
 
 	@Override
-	public void delete(int id) {
+	public void delete(String email) {
 		connect = super.getConnectionJDBC();
-		String sql = "delete from user where user_id = ?";
+		String sql = "delete from user where email = ?";
 		try {
 			preparedStatement = connect.prepareStatement(sql);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setString(1, email);
 			preparedStatement.executeUpdate();
 			System.out.println("Delete User success!");
 			preparedStatement.close();
@@ -153,6 +153,25 @@ public class UserDaoImpl extends JDBCConnection implements UserDao<User> {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public void changePassword(String email, String password) {
+		connect = super.getConnectionJDBC();
+		String sql = "update user set password = ? where email = ?;";
+		try {
+			preparedStatement = connect.prepareStatement(sql);
+			preparedStatement.setString(1, password);
+			preparedStatement.setString(2, email);
+			preparedStatement.executeUpdate();
+			System.out.println("Update password for user successfully!");
+			preparedStatement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 }

@@ -7,26 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.team.dao.impl.UserDaoImpl;
+
 /**
- * Servlet implementation class HomepageController
+ * Servlet implementation class RemoveController
  */
 
-public class HomepageController extends HttpServlet {
+public class RemoveUserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HomepageController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/view/admin/index.jsp").forward(request, response);
+		String email = (String) request.getParameter("user-email");
+		new UserDaoImpl().delete(email);
+		request.getRequestDispatcher("/admin/list-user").forward(request, response);
 	}
 
+	
 }

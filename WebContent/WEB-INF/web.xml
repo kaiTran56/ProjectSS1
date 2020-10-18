@@ -114,4 +114,20 @@
 		<servlet-name>ListUserController</servlet-name>
 		<url-pattern>/admin/list-user</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>RemoveUserController</servlet-name>
+		<servlet-class>com.team.controller.admin.RemoveUserController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RemoveUserController</servlet-name>
+		<url-pattern>/admin/user/delete</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EditUserController</servlet-name>
+		<servlet-class>com.team.controller.admin.EditUserController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditUserController</servlet-name>
+		<url-pattern>/admin/user/edit</url-pattern>
+	</servlet-mapping>
 </web-app>

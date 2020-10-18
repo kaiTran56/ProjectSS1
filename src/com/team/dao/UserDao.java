@@ -14,7 +14,9 @@ public interface UserDao<T> {
 
 	void insert(T t);
 
-	void delete(int id);
+	void delete(String email);
 	
 	T login(String email, String password);
+	
+	void changePassword(String email, String password);
 }
