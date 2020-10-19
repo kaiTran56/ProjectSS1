@@ -12,7 +12,7 @@
 					<div class="card-body">
 						<div class="card-title">Add Admin</div>
 						<hr>
-						<form action="${pageContext.request.contextPath}/admin/add-admin"
+						<form action="${pageContext.request.contextPath}/admin/admin/add"
 							method="post">
 
 							<div class="form-group">
