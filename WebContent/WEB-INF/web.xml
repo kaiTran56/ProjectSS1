@@ -154,4 +154,12 @@
 		<servlet-name>RemoveAdminController</servlet-name>
 		<url-pattern>/admin/admin/delete</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddAdminController</servlet-name>
+		<servlet-class>com.team.controller.admin.AddAdminController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddAdminController</servlet-name>
+		<url-pattern>/admin/admin/add</url-pattern>
+	</servlet-mapping>
 </web-app>
