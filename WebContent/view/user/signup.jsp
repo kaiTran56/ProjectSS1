@@ -104,7 +104,7 @@ form {
 input {
 	background-color: #eee;
 	border: none;
-	padding: 12px 15px;
+	padding: 8px 15px;
 	margin: 8px 0;
 	width: 100%;
 }
@@ -467,7 +467,7 @@ footer a {
 				</div>
 				<div class="overlay-panel overlay-right">
 					<h2>Hello!</h2>
-					<p>My name is "ONLINE LIBRARY". If you dont't have account,
+					<p>My name is "ONLINE BOOK STORE". If you dont't have account,
 						please enter your personal details to start journey with me.</p>
 					<button class="ghost" id="signUp">Sign Up</button>
 				</div>

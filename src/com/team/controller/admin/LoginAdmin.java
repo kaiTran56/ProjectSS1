@@ -50,7 +50,7 @@ public class LoginAdmin extends HttpServlet {
 
 		} else {
 			HttpSession session = request.getSession();
-			session.setAttribute("admin-username", admin.getUserName());
+			session.setAttribute("admin-username", admin.getUsername());
 			response.sendRedirect(request.getContextPath() + "/admin/homepage");
 		}
 

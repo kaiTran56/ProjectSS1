@@ -9,7 +9,7 @@ public interface AdminDao<T> {
 
 	List<T> getAll();
 	
-	T get(T t);
+	T get(String username);
 
 	void insert(T t);
 

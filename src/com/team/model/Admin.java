@@ -10,11 +10,11 @@ public class Admin {
 		this.password = password;
 	}
 
-	public String getUserName() {
+	public String getUsername() {
 		return username;
 	}
 
-	public void setUserName(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
@@ -24,6 +24,11 @@ public class Admin {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return username;
 	}
 
 }

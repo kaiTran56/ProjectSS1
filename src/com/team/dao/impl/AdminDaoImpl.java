@@ -46,7 +46,7 @@ public class AdminDaoImpl extends JDBCConnection implements AdminDao<Admin> {
 	public List<Admin> getAll() {
 		List<Admin> listAdmin = new ArrayList<Admin>();
 		this.connect = super.getConnectionJDBC();
-		String sql = "select*from admin;";
+		String sql = "select username, password from admin;";
 		try {
 			Statement statement = connect.createStatement();
 			ResultSet result = statement.executeQuery(sql);
@@ -54,18 +54,36 @@ public class AdminDaoImpl extends JDBCConnection implements AdminDao<Admin> {
 				String username = result.getString("username");
 				String password = result.getString("password");
 				listAdmin.add(new Admin(username, password));
-				return listAdmin;
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return listAdmin;
+
 	}
 
 	@Override
-	public Admin get(Admin t) {
-		// TODO Auto-generated method stub
+	public Admin get(String usernameTemp) {
+		connect = super.getConnectionJDBC();
+		String sql = "select username, password from admin where username like ?";
+		try {
+			PreparedStatement statement = connect.prepareStatement(sql);
+			statement.setString(1, usernameTemp);
+			ResultSet result = statement.executeQuery();
+			while (result.next()) {
+				String username = result.getString("username");
+				String password = result.getString("password");
+				return new Admin(username, password);
+			}
+			System.out.println("Get Admin successfully!");
+			statement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 
@@ -77,7 +95,7 @@ public class AdminDaoImpl extends JDBCConnection implements AdminDao<Admin> {
 		try {
 			statement = connect.prepareStatement(sql);
 
-			statement.setString(1, t.getUserName());
+			statement.setString(1, t.getUsername());
 			statement.setString(2, t.getPassword());
 
 			statement.executeUpdate();
@@ -111,11 +129,12 @@ public class AdminDaoImpl extends JDBCConnection implements AdminDao<Admin> {
 	@Override
 	public void Edit(Admin admin) {
 		connect = super.getConnectionJDBC();
-		String sql = "update table admin where username =? , password = ? where username like ?;";
+		String sql = "update admin set username =? , password = ? where username like ?;";
 		try {
 			PreparedStatement statement = connect.prepareStatement(sql);
-			statement.setString(1, admin.getUserName());
+			statement.setString(1, admin.getUsername());
 			statement.setString(2, admin.getPassword());
+			statement.setString(3, admin.getUsername());
 			statement.executeUpdate();
 			System.out.println("Edit successfully!");
 			statement.close();

@@ -130,4 +130,28 @@
 		<servlet-name>EditUserController</servlet-name>
 		<url-pattern>/admin/user/edit</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>EditAdminController</servlet-name>
+		<servlet-class>com.team.controller.admin.EditAdminController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditAdminController</servlet-name>
+		<url-pattern>/admin/admin/edit</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ListAdminController</servlet-name>
+		<servlet-class>com.team.controller.admin.ListAdminController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListAdminController</servlet-name>
+		<url-pattern>/admin/list-admin</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RemoveAdminController</servlet-name>
+		<servlet-class>com.team.controller.admin.RemoveAdminController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RemoveAdminController</servlet-name>
+		<url-pattern>/admin/admin/delete</url-pattern>
+	</servlet-mapping>
 </web-app>
