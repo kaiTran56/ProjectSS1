@@ -24,6 +24,12 @@ public class AddAdminController extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("/view/admin/addadmin.jsp").forward(request, response);
+	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -33,7 +39,7 @@ public class AddAdminController extends HttpServlet {
 		AdminDaoImpl adminDao = new AdminDaoImpl();
 		adminDao.insert(new Admin(username, password));
 		System.out.println("addAdmin successfully");
-		request.getRequestDispatcher("/admin/homepage").forward(request,response);
+		response.sendRedirect(request.getContextPath()+"/admin/list-admin");
 
 	}
 

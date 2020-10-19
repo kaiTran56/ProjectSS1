@@ -17,7 +17,7 @@
         </li>
         
          <li>
-          <a href="${pageContext.request.contextPath}/admin/admin/list">
+          <a href="${pageContext.request.contextPath}/admin/list-admin">
             <i class="zmdi zmdi-account-box"></i> <span>Manage Admin</span>
           </a>
         </li>
