@@ -22,7 +22,7 @@
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/user/list">
+          <a href="${pageContext.request.contextPath}/admin/list-user">
             <i class="zmdi zmdi-accounts"></i> <span>Manage User</span>
           </a>
         </li>
