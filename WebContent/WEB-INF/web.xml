@@ -98,14 +98,7 @@
 		<servlet-name>ErrorHandle</servlet-name>
 		<url-pattern>/error</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<servlet-name>AddAdminController</servlet-name>
-		<servlet-class>com.team.controller.admin.AddAdminController</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>AddAdminController</servlet-name>
-		<url-pattern>/admin/add-admin</url-pattern>
-	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>ListUserController</servlet-name>
 		<servlet-class>com.team.controller.admin.ListUserController</servlet-class>
