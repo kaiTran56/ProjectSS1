@@ -2,7 +2,7 @@ package com.team.dao;
 
 import java.util.List;
 
-public interface TransactionsDao<T> {
+public interface TransactionDao<T> {
 	List<T> getAll();
 
 	void insert(T t);
