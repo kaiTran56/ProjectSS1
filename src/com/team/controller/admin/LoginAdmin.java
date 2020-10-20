@@ -35,7 +35,7 @@ public class LoginAdmin extends HttpServlet {
 		request.getRequestDispatcher("/view/admin/login.jsp").forward(request, response);
 	}
 
-	/**
+	/*
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */

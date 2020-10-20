@@ -15,7 +15,7 @@
 
 						<form action="${pageContext.request.contextPath}/admin/admin/edit"
 							method="post">
-
+	
 							<div class="form-group">
 								<label for="input-1">Username</label> <input type="text"
 									class="form-control" id="input-1" placeholder="Username"
