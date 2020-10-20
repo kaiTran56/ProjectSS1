@@ -2,14 +2,16 @@ package com.team.dao;
 
 import java.util.List;
 
-public interface OrderedDao<T> {
+public interface ReviewDao<T> {
 	List<T> getAll();
 
 	T get(int id);
 
+	T get(String name);
+
 	void insert(T t);
 
-	void edit(T t);
+	void delete(int id);
 
-	void delete(String id);
+	void edit(T t);
 }
