@@ -165,7 +165,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>ImageUpload</servlet-name>
-		<servlet-class>com.team.controller.admin</servlet-class>
+		<servlet-class>com.team.controller.admin.ImageUpload</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ImageUpload</servlet-name>

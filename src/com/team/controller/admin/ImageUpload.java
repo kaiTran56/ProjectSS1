@@ -2,6 +2,7 @@ package com.team.controller.admin;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,9 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.http.fileupload.FileItem;
 import org.apache.tomcat.util.http.fileupload.FileItemFactory;
+import org.apache.tomcat.util.http.fileupload.FileUploadException;
 import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
+
+import com.team.model.Image;
 
 /**
  * Servlet implementation class ImageUpload
@@ -22,6 +26,7 @@ import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
 public class ImageUpload extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String url;
+
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -36,32 +41,51 @@ public class ImageUpload extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		String name = request.getParameter("textTemp");
+		System.out.println("Hello: "+name);
+		System.out.println("HEllow!");
 		if (!ServletFileUpload.isMultipartContent(request)) {
-			request.setAttribute("error-image", "Nothing to upload!");
+			out.println("Nothing to upload");
 			return;
 		}
-		FileItemFactory itemFactory = new DiskFileItemFactory();
-		ServletFileUpload upload = new ServletFileUpload(itemFactory);
-		List<FileItem> items = upload.parseRequest(new ServletRequestContext(request));
-		for (FileItem item : items) {
-			String contentType = item.getContentType();
-			System.out.println("Type: " + contentType);
-			if (!contentType.equals("image/jpeg") && !contentType.equals("image/png")) {
-				request.setAttribute("error-type", "only png or jpeg format image files supported");
-				continue;
-			}
-			String fileURL = "C:\\Users\\Admin\\eclipse-workspace\\WebTest\\WebContent\\images";
-			File uploadDir = new File(fileURL);
-			File file = File.createTempFile("img", ".png", uploadDir);
-			try {
+		FileItemFactory itemfactory = new DiskFileItemFactory();
+		ServletFileUpload upload = new ServletFileUpload(itemfactory);
+		try {
+			List<FileItem> items = upload.parseRequest(new ServletRequestContext(request));
+			for (FileItem item : items) {
+				String contentType = item.getContentType();
+				System.out.println("Type: " + contentType);
+
+				/*
+				 * @use: check type of file to upload to server
+				 * 
+				 * @result: Server just recieve the image which have types: png or jpeg
+				 * 
+				 */
+
+				if (!contentType.equals("image/jpeg") && !contentType.equals("image/png")) {
+					out.println("only png or jpeg format image files supported");
+					continue;
+				}
+
+				String fileUrl = "C:\\Zoom\\images";
+				File uploadDir = new File(fileUrl);
+				System.out.println("address: " + uploadDir.getAbsolutePath());
+				File file = File.createTempFile("img", ".png", uploadDir);
 				item.write(file);
 				url = file.getAbsolutePath();
-				System.out.println("Address: " + url);
-				request.setAttribute("success-upload", "Upload image successful!");
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Image image = new Image(url);
+				System.out.println("Address: " + image.getAddress());
+				out.println("File Saved Successfully");
+
 			}
+		} catch (FileUploadException e) {
+
+			out.println("upload fail");
+		} catch (Exception ex) {
+
+			out.println("can't save");
 		}
 	}
 

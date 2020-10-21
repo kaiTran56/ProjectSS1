@@ -7,11 +7,27 @@
 <title>File Uploading using Java</title>
 </head>
 <body>
-	<form method="post"
-		action="${pageContext.request.contextPath}/Uploader"
-		encType="multipart/form-data">
-		<input type="file" name="file" value="select images..." /> <input
-			type="submit" value="start upload" />
-	</form>
+	<div class="card-body">
+		<div class="card-title">Add News</div>
+		<hr>
+
+		<form method="post"
+			action="${pageContext.request.contextPath}/image/upload"
+			encType="multipart/form-data">
+
+			<div class="form-group">
+				<label for="input-3">New</label> <input type="text"
+					value="select images..." name = "textTemp"/>
+			</div>
+
+			<div class="form-group">
+				<label for="input-3">Image</label> <input type="file" name="file"
+					value="select images..." />
+			</div>
+			
+			<input type="submit" value="start upload" />
+		</form>
+	</div>
+
 </body>
 </html>

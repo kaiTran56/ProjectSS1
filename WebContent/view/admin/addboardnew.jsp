@@ -10,7 +10,7 @@
 					<div class="card-body">
 						<div class="card-title">Add News</div>
 						<hr>
-						<form action="${pageContext.request.contextPath}/admin/new/add"
+						<form action="${pageContext.request.contextPath}/image/upload"
 							method="post">
 
 							<div class="form-group">
@@ -24,9 +24,9 @@
 									name="new-content"></textarea>
 							</div>
 							<div class="form-group">
-								<label for="input-3">Image</label> <input type="file"
-									name="file" palaceholder="Nothing here!"
-									value="select images..." name="new-image_link" />
+								<label for="input-3">Image</label> <input type="text"
+									name="file" value="select images..." name="new-image_link" />
+
 							</div>
 							<div class="form-group">
 								<label for="input-4">Author</label>
