@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,23 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 		connect = super.getConnectionJDBC();
 		List<Boardnew> listBoardnew = new ArrayList<Boardnew>();
 		String sql = "select title, content, image_link,author, created from boardnew;";
-		return null;
+		try {
+			statement = connect.createStatement();
+			result = statement.executeQuery(sql);
+			while (result.next()) {
+				String title = result.getString("title");
+				String content = result.getString("content");
+				String image_link = result.getString("image_link");
+				String author = result.getString("author");
+				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
+				listBoardnew.add(new Boardnew(title, content, image_link, author, created));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return listBoardnew;
 	}
 
 	@Override

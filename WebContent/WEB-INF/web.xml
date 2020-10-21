@@ -171,4 +171,12 @@
 		<servlet-name>ImageUpload</servlet-name>
 		<url-pattern>/admin/image/upload</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>ListBoardnewController</servlet-name>
+		<servlet-class>com.team.controller.ListBoardnewController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListBoardnewController</servlet-name>
+		<url-pattern>/admin/list-boardnew</url-pattern>
+	</servlet-mapping>
 </web-app>
