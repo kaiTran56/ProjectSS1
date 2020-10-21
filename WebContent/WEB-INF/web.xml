@@ -155,4 +155,20 @@
 		<servlet-name>AddAdminController</servlet-name>
 		<url-pattern>/admin/admin/add</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddBoardnewController</servlet-name>
+		<servlet-class>com.team.controller.admin.AddBoardnewController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddBoardnewController</servlet-name>
+		<url-pattern>/admin/new/add</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ImageUpload</servlet-name>
+		<servlet-class>com.team.controller.admin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImageUpload</servlet-name>
+		<url-pattern>/image/upload</url-pattern>
+	</servlet-mapping>
 </web-app>

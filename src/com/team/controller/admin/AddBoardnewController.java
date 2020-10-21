@@ -2,22 +2,19 @@ package com.team.controller.admin;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tomcat.util.http.fileupload.FileItem;
-import org.apache.tomcat.util.http.fileupload.FileItemFactory;
-import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
-import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
-import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
+import com.team.dao.impl.BoardnewDaoImpl;
+import com.team.model.Boardnew;
+import com.team.model.Image;
 
 public class AddBoardnewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private String url;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -43,27 +40,18 @@ public class AddBoardnewController extends HttpServlet {
 			throws ServletException, IOException {
 		String title = request.getParameter("new-title");
 		String content = request.getParameter("new-content");
-		String image = request.getParameter("new-image_link");
+		
+		String image_link = new Image().getAddress();
 		String author = request.getParameter("new-author");
-		LocalDateTime time = LocalDateTime.now();
+		LocalDateTime created = LocalDateTime.now();
+		System.out.println("Check: "+title+content+image_link+author);
+		Boardnew boardnew = new Boardnew(title, content, image_link, author, created);
+		new BoardnewDaoImpl().insert(boardnew);
 	}
 
 	protected void setURL(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (!ServletFileUpload.isMultipartContent(request)) {
-			request.setAttribute("error-image", "Nothing to upload!");
-			return;
-		}
-		FileItemFactory itemFactory = new DiskFileItemFactory();
-		ServletFileUpload upload = new ServletFileUpload(itemFactory);
-		List<FileItem> items = upload.parseRequest(new ServletRequestContext(request));
-		for (FileItem item : items) {
-			String contentType = item.getContentType();
-			System.out.println("Type: " + contentType);
-			if(!contentType.equals("image/jpeg")&&!contentType.equals("image/png")) {
-				request.setAttribute("error-type","only png or jpeg format image files supported");
-			}
-		}
+		
 	}
 
 }

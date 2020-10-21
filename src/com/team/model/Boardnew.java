@@ -21,6 +21,15 @@ public class Boardnew {
 		this.created = created;
 	}
 
+	public Boardnew(String title, String content, String image_link, String author, LocalDateTime created) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.image_link = image_link;
+		this.author = author;
+		this.created = created;
+	}
+
 	public String getBoardnew_id() {
 		return boardnew_id;
 	}
