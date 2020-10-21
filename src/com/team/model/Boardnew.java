@@ -21,6 +21,14 @@ public class Boardnew {
 		this.created = created;
 	}
 
+	public Boardnew(String title, String content, String author, LocalDateTime created) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.author = author;
+		this.created = created;
+	}
+
 	public Boardnew(String title, String content, String image_link, String author, LocalDateTime created) {
 		super();
 		this.title = title;
@@ -28,6 +36,11 @@ public class Boardnew {
 		this.image_link = image_link;
 		this.author = author;
 		this.created = created;
+	}
+
+	public Boardnew(String image_link) {
+		super();
+		this.image_link = image_link;
 	}
 
 	public String getBoardnew_id() {
@@ -76,5 +89,11 @@ public class Boardnew {
 
 	public void setCreated(LocalDateTime created) {
 		this.created = created;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "name: "+author;
 	}
 }

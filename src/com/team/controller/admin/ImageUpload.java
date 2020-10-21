@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.util.http.fileupload.FileItem;
 import org.apache.tomcat.util.http.fileupload.FileItemFactory;
@@ -17,7 +18,8 @@ import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletRequestContext;
 
-import com.team.model.Image;
+import com.team.dao.impl.BoardnewDaoImpl;
+import com.team.model.Boardnew;
 
 /**
  * Servlet implementation class ImageUpload
@@ -42,15 +44,15 @@ public class ImageUpload extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		String name = request.getParameter("textTemp");
-		System.out.println("Hello: "+name);
+		HttpSession session = request.getSession();
 		System.out.println("HEllow!");
-		if (!ServletFileUpload.isMultipartContent(request)) {
-			out.println("Nothing to upload");
-			return;
-		}
+		/*
+		 * if (!ServletFileUpload.isMultipartContent(request)) {
+		 * out.println("Nothing to upload"); return; }
+		 */
 		FileItemFactory itemfactory = new DiskFileItemFactory();
 		ServletFileUpload upload = new ServletFileUpload(itemfactory);
+
 		try {
 			List<FileItem> items = upload.parseRequest(new ServletRequestContext(request));
 			for (FileItem item : items) {
@@ -75,8 +77,12 @@ public class ImageUpload extends HttpServlet {
 				File file = File.createTempFile("img", ".png", uploadDir);
 				item.write(file);
 				url = file.getAbsolutePath();
-				Image image = new Image(url);
-				System.out.println("Address: " + image.getAddress());
+				Boardnew boardnew = (Boardnew) session.getAttribute("boardnewTemp");
+				boardnew.setImage_link(url);
+				System.out.println("Hello: " + boardnew.getAuthor() + "  " + boardnew.getImage_link());
+
+				System.out.println(url);
+				new BoardnewDaoImpl().insert(boardnew);
 				out.println("File Saved Successfully");
 
 			}

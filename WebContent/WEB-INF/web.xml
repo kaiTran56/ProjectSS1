@@ -169,6 +169,6 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ImageUpload</servlet-name>
-		<url-pattern>/image/upload</url-pattern>
+		<url-pattern>/admin/image/upload</url-pattern>
 	</servlet-mapping>
 </web-app>

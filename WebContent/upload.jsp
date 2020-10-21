@@ -12,14 +12,10 @@
 		<hr>
 
 		<form method="post"
-			action="${pageContext.request.contextPath}/image/upload"
+			action="${pageContext.request.contextPath}/admin/image/upload"
 			encType="multipart/form-data">
 
-			<div class="form-group">
-				<label for="input-3">New</label> <input type="text"
-					value="select images..." name = "textTemp"/>
-			</div>
-
+			
 			<div class="form-group">
 				<label for="input-3">Image</label> <input type="file" name="file"
 					value="select images..." />
