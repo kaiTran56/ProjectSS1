@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.team.JDBC.JDBCConnection;
@@ -19,8 +20,10 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 	private ResultSet result;
 
 	@Override
-	public List getAll() {
-		// TODO Auto-generated method stub
+	public List<Boardnew> getAll() {
+		connect = super.getConnectionJDBC();
+		List<Boardnew> listBoardnew = new ArrayList<Boardnew>();
+		String sql = "select title, content, image_link,author, created from boardnew;";
 		return null;
 	}
 
