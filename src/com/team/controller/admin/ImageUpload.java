@@ -83,7 +83,7 @@ public class ImageUpload extends HttpServlet {
 
 				System.out.println(url);
 				new BoardnewDaoImpl().insert(boardnew);
-				out.println("File Saved Successfully");
+				response.sendRedirect(request.getContextPath()+ "/admin/list-boardnew");
 
 			}
 		} catch (FileUploadException e) {
