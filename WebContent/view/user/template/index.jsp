@@ -18,15 +18,33 @@
 	rel="stylesheet">
 
 <!-- Css Styles -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/view/user/template/css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/view/user/template/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/view/user/template/css/themify-icons.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/view/user/template/css/elegant-icons.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/view/user/template/css/owl.carousel.min.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/view/user/template/css/nice-select.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/view/user/template/css/jquery-ui.min.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/view/user/template/css/slicknav.min.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/view/user/template/css/style.css" type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/view/user/template/css/bootstrap.min.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/view/user/template/css/font-awesome.min.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/view/user/template/css/themify-icons.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/view/user/template/css/elegant-icons.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/view/user/template/css/owl.carousel.min.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/view/user/template/css/nice-select.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/view/user/template/css/jquery-ui.min.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/view/user/template/css/slicknav.min.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/view/user/template/css/style.css"
+	type="text/css">
 </head>
 
 <body>
@@ -48,20 +66,23 @@
 					</div>
 				</div>
 				<div class="ht-right">
-					<a href="${pageContext.request.contextPath}/view/user/signup.jsp" class="login-panel"><i class="fa fa-user"></i>Login</a>
-					<a href = "" class="login-panel" ><i class="fa fa-user"></i>logout</a>
-					
+					<a href="${pageContext.request.contextPath}/view/user/signup.jsp"
+						class="login-panel"><i class="fa fa-user"></i>Login</a> <a href=""
+						class="login-panel"><i class="fa fa-user"></i>logout</a>
+
 					<div class="lan-selector">
 						<select class="language_drop" name="countries" id="countries"
 							style="width: 300px;">
-							<option value='yt' data-image="${pageContext.request.contextPath}/view/user/template/img/flag-1.jpg"
+							<option value='yt'
+								data-image="${pageContext.request.contextPath}/view/user/template/img/flag-1.jpg"
 								data-imagecss="flag yt" data-title="English">English</option>
-							<option value='yu' data-image="${pageContext.request.contextPath}/view/user/template/img/flag-2.jpg"
+							<option value='yu'
+								data-image="${pageContext.request.contextPath}/view/user/template/img/flag-2.jpg"
 								data-imagecss="flag yu" data-title="Bangladesh">German
 							</option>
 						</select>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
@@ -70,7 +91,9 @@
 				<div class="row">
 					<div class="col-lg-2 col-md-2">
 						<div class="logo">
-							<a href="index.jsp"> <img src="${pageContext.request.contextPath}/view/user/template/img/logo.png" alt="">
+							<a href="index.jsp"> <img
+								src="${pageContext.request.contextPath}/view/user/template/img/logo.png"
+								alt="">
 							</a>
 						</div>
 					</div>
@@ -99,7 +122,8 @@
 										<table>
 											<tbody>
 												<tr>
-													<td class="si-pic"><img src="${pageContext.request.contextPath}/view/user/template/img/select-product-1.jpg"
+													<td class="si-pic"><img
+														src="${pageContext.request.contextPath}/view/user/template/img/select-product-1.jpg"
 														alt=""></td>
 													<td class="si-text">
 														<div class="product-selected">
@@ -110,7 +134,8 @@
 													<td class="si-close"><i class="ti-close"></i></td>
 												</tr>
 												<tr>
-													<td class="si-pic"><img src="${pageContext.request.contextPath}/view/user/template/img/select-product-2.jpg"
+													<td class="si-pic"><img
+														src="${pageContext.request.contextPath}/view/user/template/img/select-product-2.jpg"
 														alt=""></td>
 													<td class="si-text">
 														<div class="product-selected">
@@ -172,9 +197,12 @@
 								<li><a href="blog-details.jsp">Blog Details</a></li>
 								<li><a href="shopping-cart.jsp">Shopping Cart</a></li>
 								<li><a href="check-out.jsp">Checkout</a></li>
-								<li><a href="${pageContext.request.contextPath}/view/user/profile">Profile</a></li>
-								<li><a href="${pageContext.request.contextPath}/view/user/signup.jsp">Register</a></li>
-								<li><a href="${pageContext.request.contextPath}/view/user/signup.jsp">Login</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/view/user/profile">Profile</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/view/user/signup.jsp">Register</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/view/user/signup.jsp">Login</a></li>
 							</ul></li>
 					</ul>
 				</nav>
@@ -187,7 +215,8 @@
 	<!-- Hero Section Begin -->
 	<section class="hero-section">
 		<div class="hero-items owl-carousel">
-			<div class="single-hero-items set-bg" data-setbg="${pageContext.request.contextPath}/view/user/template/img/hero-1.jpg">
+			<div class="single-hero-items set-bg"
+				data-setbg="${pageContext.request.contextPath}/view/user/template/img/hero-1.jpg">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-5">
@@ -205,7 +234,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="single-hero-items set-bg" data-setbg="${pageContext.request.contextPath}/view/user/template/img/hero-2.jpg">
+			<div class="single-hero-items set-bg"
+				data-setbg="${pageContext.request.contextPath}/view/user/template/img/hero-2.jpg">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-5">
@@ -233,7 +263,9 @@
 			<div class="row">
 				<div class="col-lg-4">
 					<div class="single-banner">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/banner-1.jpg" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/banner-1.jpg"
+							alt="">
 						<div class="inner-text">
 							<h4>Men’s</h4>
 						</div>
@@ -241,7 +273,9 @@
 				</div>
 				<div class="col-lg-4">
 					<div class="single-banner">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/banner-2.jpg" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/banner-2.jpg"
+							alt="">
 						<div class="inner-text">
 							<h4>Women’s</h4>
 						</div>
@@ -249,7 +283,9 @@
 				</div>
 				<div class="col-lg-4">
 					<div class="single-banner">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/banner-3.jpg" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/banner-3.jpg"
+							alt="">
 						<div class="inner-text">
 							<h4>Kid’s</h4>
 						</div>
@@ -283,7 +319,9 @@
 					<div class="product-slider owl-carousel">
 						<div class="product-item">
 							<div class="pi-pic">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/products/women-1.jpg" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/products/women-1.jpg"
+									alt="">
 								<div class="sale">Sale</div>
 								<div class="icon">
 									<i class="icon_heart_alt"></i>
@@ -307,7 +345,9 @@
 						</div>
 						<div class="product-item">
 							<div class="pi-pic">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/products/women-2.jpg" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/products/women-2.jpg"
+									alt="">
 								<div class="icon">
 									<i class="icon_heart_alt"></i>
 								</div>
@@ -328,7 +368,9 @@
 						</div>
 						<div class="product-item">
 							<div class="pi-pic">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/products/women-3.jpg" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/products/women-3.jpg"
+									alt="">
 								<div class="icon">
 									<i class="icon_heart_alt"></i>
 								</div>
@@ -349,7 +391,9 @@
 						</div>
 						<div class="product-item">
 							<div class="pi-pic">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/products/women-4.jpg" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/products/women-4.jpg"
+									alt="">
 								<div class="icon">
 									<i class="icon_heart_alt"></i>
 								</div>
@@ -376,7 +420,8 @@
 	<!-- Women Banner Section End -->
 
 	<!-- Deal Of The Week Section Begin-->
-	<section class="deal-of-week set-bg spad" data-setbg="${pageContext.request.contextPath}/view/user/template/img/time-bg.jpg">
+	<section class="deal-of-week set-bg spad"
+		data-setbg="${pageContext.request.contextPath}/view/user/template/img/time-bg.jpg">
 		<div class="container">
 			<div class="col-lg-6 text-center">
 				<div class="section-title">
@@ -429,7 +474,9 @@
 					<div class="product-slider owl-carousel">
 						<div class="product-item">
 							<div class="pi-pic">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/products/man-1.jpg" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/products/man-1.jpg"
+									alt="">
 								<div class="sale">Sale</div>
 								<div class="icon">
 									<i class="icon_heart_alt"></i>
@@ -453,7 +500,9 @@
 						</div>
 						<div class="product-item">
 							<div class="pi-pic">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/products/man-2.jpg" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/products/man-2.jpg"
+									alt="">
 								<div class="icon">
 									<i class="icon_heart_alt"></i>
 								</div>
@@ -474,7 +523,9 @@
 						</div>
 						<div class="product-item">
 							<div class="pi-pic">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/products/man-3.jpg" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/products/man-3.jpg"
+									alt="">
 								<div class="icon">
 									<i class="icon_heart_alt"></i>
 								</div>
@@ -495,7 +546,9 @@
 						</div>
 						<div class="product-item">
 							<div class="pi-pic">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/products/man-4.jpg" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/products/man-4.jpg"
+									alt="">
 								<div class="icon">
 									<i class="icon_heart_alt"></i>
 								</div>
@@ -530,7 +583,8 @@
 
 	<!-- Instagram Section Begin -->
 	<div class="instagram-photo">
-		<div class="insta-item set-bg" data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-1.jpg">
+		<div class="insta-item set-bg"
+			data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-1.jpg">
 			<div class="inside-text">
 				<i class="ti-instagram"></i>
 				<h5>
@@ -538,7 +592,8 @@
 				</h5>
 			</div>
 		</div>
-		<div class="insta-item set-bg" data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-2.jpg">
+		<div class="insta-item set-bg"
+			data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-2.jpg">
 			<div class="inside-text">
 				<i class="ti-instagram"></i>
 				<h5>
@@ -546,7 +601,8 @@
 				</h5>
 			</div>
 		</div>
-		<div class="insta-item set-bg" data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-3.jpg">
+		<div class="insta-item set-bg"
+			data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-3.jpg">
 			<div class="inside-text">
 				<i class="ti-instagram"></i>
 				<h5>
@@ -554,7 +610,8 @@
 				</h5>
 			</div>
 		</div>
-		<div class="insta-item set-bg" data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-4.jpg">
+		<div class="insta-item set-bg"
+			data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-4.jpg">
 			<div class="inside-text">
 				<i class="ti-instagram"></i>
 				<h5>
@@ -562,7 +619,8 @@
 				</h5>
 			</div>
 		</div>
-		<div class="insta-item set-bg" data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-5.jpg">
+		<div class="insta-item set-bg"
+			data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-5.jpg">
 			<div class="inside-text">
 				<i class="ti-instagram"></i>
 				<h5>
@@ -570,7 +628,8 @@
 				</h5>
 			</div>
 		</div>
-		<div class="insta-item set-bg" data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-6.jpg">
+		<div class="insta-item set-bg"
+			data-setbg="${pageContext.request.contextPath}/view/user/template/img/insta-6.jpg">
 			<div class="inside-text">
 				<i class="ti-instagram"></i>
 				<h5>
@@ -594,7 +653,9 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-blog">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/latest-1.jpg" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/latest-1.jpg"
+							alt="">
 						<div class="latest-text">
 							<div class="tag-list">
 								<div class="tag-item">
@@ -614,7 +675,9 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-blog">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/latest-2.jpg" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/latest-2.jpg"
+							alt="">
 						<div class="latest-text">
 							<div class="tag-list">
 								<div class="tag-item">
@@ -634,7 +697,9 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-blog">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/latest-3.jpg" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/latest-3.jpg"
+							alt="">
 						<div class="latest-text">
 							<div class="tag-list">
 								<div class="tag-item">
@@ -658,7 +723,9 @@
 					<div class="col-lg-4">
 						<div class="single-benefit">
 							<div class="sb-icon">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/icon-1.png" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/icon-1.png"
+									alt="">
 							</div>
 							<div class="sb-text">
 								<h6>Free Shipping</h6>
@@ -669,7 +736,9 @@
 					<div class="col-lg-4">
 						<div class="single-benefit">
 							<div class="sb-icon">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/icon-2.png" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/icon-2.png"
+									alt="">
 							</div>
 							<div class="sb-text">
 								<h6>Delivery On Time</h6>
@@ -680,7 +749,9 @@
 					<div class="col-lg-4">
 						<div class="single-benefit">
 							<div class="sb-icon">
-								<img src="${pageContext.request.contextPath}/view/user/template/img/icon-1.png" alt="">
+								<img
+									src="${pageContext.request.contextPath}/view/user/template/img/icon-1.png"
+									alt="">
 							</div>
 							<div class="sb-text">
 								<h6>Secure Payment</h6>
@@ -700,27 +771,37 @@
 			<div class="logo-carousel owl-carousel">
 				<div class="logo-item">
 					<div class="tablecell-inner">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/logo-carousel/logo-1.png" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/logo-carousel/logo-1.png"
+							alt="">
 					</div>
 				</div>
 				<div class="logo-item">
 					<div class="tablecell-inner">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/logo-carousel/logo-2.png" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/logo-carousel/logo-2.png"
+							alt="">
 					</div>
 				</div>
 				<div class="logo-item">
 					<div class="tablecell-inner">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/logo-carousel/logo-3.png" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/logo-carousel/logo-3.png"
+							alt="">
 					</div>
 				</div>
 				<div class="logo-item">
 					<div class="tablecell-inner">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/logo-carousel/logo-4.png" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/logo-carousel/logo-4.png"
+							alt="">
 					</div>
 				</div>
 				<div class="logo-item">
 					<div class="tablecell-inner">
-						<img src="${pageContext.request.contextPath}/view/user/template/img/logo-carousel/logo-5.png" alt="">
+						<img
+							src="${pageContext.request.contextPath}/view/user/template/img/logo-carousel/logo-5.png"
+							alt="">
 					</div>
 				</div>
 			</div>
@@ -735,7 +816,9 @@
 				<div class="col-lg-3">
 					<div class="footer-left">
 						<div class="footer-logo">
-							<a href="#"><img src="${pageContext.request.contextPath}/view/user/template/img/footer-logo.png" alt=""></a>
+							<a href="#"><img
+								src="${pageContext.request.contextPath}/view/user/template/img/footer-logo.png"
+								alt=""></a>
 						</div>
 						<ul>
 							<li>Address: 60-49 Road 11378 New York</li>
@@ -801,7 +884,9 @@
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</div>
 						<div class="payment-pic">
-							<img src="${pageContext.request.contextPath}/view/user/template/img/payment-method.png" alt="">
+							<img
+								src="${pageContext.request.contextPath}/view/user/template/img/payment-method.png"
+								alt="">
 						</div>
 					</div>
 				</div>
@@ -811,16 +896,26 @@
 	<!-- Footer Section End -->
 
 	<!-- Js Plugins -->
-	<script src="${pageContext.request.contextPath}/view/user/template/js/jquery-3.3.1.min.js"></script>
-	<script src="${pageContext.request.contextPath}/view/user/template/js/bootstrap.min.js"></script>
-	<script src="${pageContext.request.contextPath}/view/user/template/js/jquery-ui.min.js"></script>
-	<script src="${pageContext.request.contextPath}/view/user/template/js/jquery.countdown.min.js"></script>
-	<script src="${pageContext.request.contextPath}/view/user/template/js/jquery.nice-select.min.js"></script>
-	<script src="${pageContext.request.contextPath}/view/user/template/js/jquery.zoom.min.js"></script>
-	<script src="${pageContext.request.contextPath}/view/user/template/js/jquery.dd.min.js"></script>
-	<script src="${pageContext.request.contextPath}/view/user/template/js/jquery.slicknav.js"></script>
-	<script src="${pageContext.request.contextPath}/view/user/template/js/owl.carousel.min.js"></script>
-	<script src="${pageContext.request.contextPath}/view/user/template/js/main.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/view/user/template/js/jquery-3.3.1.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/view/user/template/js/bootstrap.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/view/user/template/js/jquery-ui.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/view/user/template/js/jquery.countdown.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/view/user/template/js/jquery.nice-select.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/view/user/template/js/jquery.zoom.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/view/user/template/js/jquery.dd.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/view/user/template/js/jquery.slicknav.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/view/user/template/js/owl.carousel.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/view/user/template/js/main.js"></script>
 </body>
 
 </html>
