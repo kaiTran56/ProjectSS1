@@ -35,7 +35,7 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 				String image_link = result.getString("image_link");
 				String author = result.getString("author");
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
-				listBoardnew.add(new Boardnew(boardnew_id,title, content, image_link, author, created));
+				listBoardnew.add(new Boardnew(boardnew_id, title, content, image_link, author, created));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -53,8 +53,29 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 
 	@Override
 	public Boardnew get(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		connect = super.getConnectionJDBC();
+		String sql = "select * from boardnew where boardnew_id = ?;";
+		Boardnew boardnew = null;
+		try {
+			preparedStatement = connect.prepareStatement(sql);
+			preparedStatement.setInt(1, id);
+			result = preparedStatement.executeQuery();
+			while(result.next()) {
+				String boardnew_id = result.getString("boardnew_id");
+				String title = result.getString("title");
+				String content = result.getString("content");
+				String image_link = result.getString("image_link");
+				String author = result.getString("author");
+				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
+				boardnew = new Boardnew(boardnew_id, title, content, image_link, author, created);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return boardnew;
 	}
 
 	@Override
@@ -79,7 +100,19 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
+		connect = super.getConnectionJDBC();
+		String sql = "delete from boardnew where boardnew_id = ?;";
+		try {
+			preparedStatement = connect.prepareStatement(sql);
+			preparedStatement.setInt(1, id);
+			preparedStatement.executeUpdate();
+			System.out.println("Delete boardnew succcessfully!");
+			preparedStatement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

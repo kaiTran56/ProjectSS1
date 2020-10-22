@@ -9,6 +9,7 @@ public class Boardnew {
 	private String image_link;
 	private String author;
 	private LocalDateTime created;
+	private String urlTemp;
 
 	public Boardnew(String boardnew_id, String title, String content, String image_link, String author,
 			LocalDateTime created) {
@@ -68,6 +69,7 @@ public class Boardnew {
 	}
 
 	public String getImage_link() {
+
 		return image_link;
 	}
 
@@ -91,9 +93,17 @@ public class Boardnew {
 		this.created = created;
 	}
 
+	public String getUrlTemp() {
+		String url = "C:\\Users\\Admin\\eclipse-workspace\\Project\\WebContent\\";
+		int len = this.getImage_link().length();
+		System.out.println("Address: "+this.getImage_link()+" The length: "+len);
+		urlTemp = this.getImage_link().substring(url.length(), len).replace("\\", "//");
+		return urlTemp;
+	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "name: "+author;
+		return "name: " + author;
 	}
 }

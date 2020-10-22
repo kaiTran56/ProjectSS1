@@ -71,7 +71,7 @@ public class ImageUpload extends HttpServlet {
 					continue;
 				}
 
-				String fileUrl = "C:\\Zoom\\images";
+				String fileUrl = "C:\\Users\\Admin\\eclipse-workspace\\Project\\WebContent\\images";
 				File uploadDir = new File(fileUrl);
 				System.out.println("address: " + uploadDir.getAbsolutePath());
 				File file = File.createTempFile("img", ".png", uploadDir);

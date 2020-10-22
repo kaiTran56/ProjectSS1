@@ -47,18 +47,18 @@
 											<td>${boardnew.title}</td>
 											<td><img
 												style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"
-												src="${boardnew.image_link}"></td>
+												src="${pageContext.request.contextPath}/${boardnew.urlTemp}"></td>
 											<td>${boardnew.author}</td>
 											<td>${boardnew.created}</td>
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/admin/new/delete?id=${boardnew.boardnew_id}">Remove</a>
+														href="${pageContext.request.contextPath}/admin/new/delete?boardnew-id=${boardnew.boardnew_id}">Remove</a>
 												</button>
 
 												<button class="btn btn-success">
 													<a
-														href="${pageContext.request.contextPath}/admin/new/edit?id=${boardnew.boardnew_id}">Edit</a>
+														href="${pageContext.request.contextPath}/admin/new/edit?boardnew-id=${boardnew.boardnew_id}">Edit</a>
 												</button>
 											</td>
 										</tr>

@@ -12,11 +12,7 @@
 						<hr>
 						<form action="${pageContext.request.contextPath}/admin/new/edit"
 							method="post">
-							<div class="form-group">
-								<label for="input-1">ID</label> <input type="text"
-									class="form-control" readonly id="input-1"
-									="ID" value="${boardnew.id}" name="new-id">
-							</div>
+							
 							<div class="form-group">
 								<label for="input-2">Title</label> <input type="text"
 									class="form-control" id="input-2" value="${boardnew.title}"
@@ -37,22 +33,18 @@
 								<div>
 									<select class="form-control valid" id="input-4"
 										name="new-author"" >
-										<option>NULL</option>
-										<option></option>
+										<option>TranQuyet</option>
+										<option>TranKai</option>
 										<option></option>
 										<option></option>
 										<option></option>
 									</select>
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="input-5">Date</label> <input type="date"
-									class="form-control" id="input-5" value="${boardnew.created}"
-									name="new-created">
-							</div>
+							
 							<div class="form-footer">
 								<button class="btn btn-danger">
-									<a href="${pageContext.request.contextPath}/admin/product/list">Cancel</a>
+									<a href="${pageContext.request.contextPath}/admin/list-boardnew">Cancel</a>
 								</button>
 								<button class="btn btn-success">Update</button>
 							</div>

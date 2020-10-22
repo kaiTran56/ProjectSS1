@@ -179,4 +179,12 @@
 		<servlet-name>ListBoardnewController</servlet-name>
 		<url-pattern>/admin/list-boardnew</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>RemoveBoardnewController</servlet-name>
+		<servlet-class>com.team.controller.admin.RemoveBoardnewController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RemoveBoardnewController</servlet-name>
+		<url-pattern>/admin/new/delete</url-pattern>
+	</servlet-mapping>
 </web-app>
