@@ -24,17 +24,18 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 	public List<Boardnew> getAll() {
 		connect = super.getConnectionJDBC();
 		List<Boardnew> listBoardnew = new ArrayList<Boardnew>();
-		String sql = "select title, content, image_link,author, created from boardnew;";
+		String sql = "select * from boardnew;";
 		try {
 			statement = connect.createStatement();
 			result = statement.executeQuery(sql);
 			while (result.next()) {
+				String boardnew_id = result.getString("boardnew_id");
 				String title = result.getString("title");
 				String content = result.getString("content");
 				String image_link = result.getString("image_link");
 				String author = result.getString("author");
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
-				listBoardnew.add(new Boardnew(title, content, image_link, author, created));
+				listBoardnew.add(new Boardnew(boardnew_id,title, content, image_link, author, created));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

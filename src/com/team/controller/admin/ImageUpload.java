@@ -83,6 +83,7 @@ public class ImageUpload extends HttpServlet {
 
 				System.out.println(url);
 				new BoardnewDaoImpl().insert(boardnew);
+				session.removeAttribute("boardnewTemp");
 				response.sendRedirect(request.getContextPath()+ "/admin/list-boardnew");
 
 			}

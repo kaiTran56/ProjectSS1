@@ -53,7 +53,7 @@
           </a>   
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/new/list">
+          <a href="${pageContext.request.contextPath}/admin/list-boardnew">
             <i class="icon-envelope-open"></i> <span>News</span>
           </a>
         </li>

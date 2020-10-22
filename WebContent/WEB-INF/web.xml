@@ -173,7 +173,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>ListBoardnewController</servlet-name>
-		<servlet-class>com.team.controller.ListBoardnewController</servlet-class>
+		<servlet-class>com.team.controller.admin.ListBoardnewController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ListBoardnewController</servlet-name>
