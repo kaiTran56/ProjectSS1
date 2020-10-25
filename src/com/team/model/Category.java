@@ -1,15 +1,21 @@
 package com.team.model;
 
-public class Catalog {
+public class Category {
 	private String catalog_id;
 	private String name;
 	private String parent_id;
 
-	public Catalog(String catalog_id, String name, String parent_id) {
+	public Category(String catalog_id, String name, String parent_id) {
 		super();
 		this.catalog_id = catalog_id;
 		this.name = name;
 		this.parent_id = parent_id;
+	}
+
+	public Category(String catalog_id, String name) {
+		super();
+		this.catalog_id = catalog_id;
+		this.name = name;
 	}
 
 	public String getCatalog_id() {
