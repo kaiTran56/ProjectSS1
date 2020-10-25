@@ -47,7 +47,10 @@ public class CategoryDaoImpl extends JDBCConnection implements CategoryDao<Categ
 		try {
 			statement = connect.prepareStatement(sql);
 			statement.setInt(1, id);
-			statement.executeUpdate();
+			result = statement.executeQuery();
+			while (result.next()) {
+
+			}
 			System.out.println("Get successfull!");
 			statement.close();
 			connect.close();
@@ -97,7 +100,20 @@ public class CategoryDaoImpl extends JDBCConnection implements CategoryDao<Categ
 
 	@Override
 	public void edit(Category t) {
-		// TODO Auto-generated method stub
+		connect = super.getConnectionJDBC();
+		String sql = "update catalog set catalog_id = ?, name = ? where catalog_id = ?;";
+		try {
+			statement = connect.prepareStatement(sql);
+			statement.setInt(1, t.getCatalog_id());
+			statement.setString(2, t.getName());
+			statement.executeUpdate();
+			System.out.println("Update catalog successfully!");
+			statement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

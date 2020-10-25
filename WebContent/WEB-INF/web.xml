@@ -219,4 +219,13 @@
 		<servlet-name>RemoveCategoryController</servlet-name>
 		<url-pattern>/admin/cate/delete</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EditCategoryController</servlet-name>
+		<servlet-class>com.team.controller.admin.EditCategoryController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditCategoryController</servlet-name>
+		<url-pattern>/admin/cate/edit</url-pattern>
+	</servlet-mapping>
 </web-app>
