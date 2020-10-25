@@ -27,7 +27,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 			statement = connect.createStatement();
 			result = statement.executeQuery(sql);
 			while(result.next()) {
-				String 
+				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

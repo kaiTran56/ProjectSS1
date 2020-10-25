@@ -49,7 +49,9 @@ public class CategoryDaoImpl extends JDBCConnection implements CategoryDao<Categ
 			statement.setInt(1, id);
 			result = statement.executeQuery();
 			while (result.next()) {
-
+				int catalog_id = result.getInt("catalog_id");
+				String name = result.getString("name");
+				return new Category(catalog_id, name);
 			}
 			System.out.println("Get successfull!");
 			statement.close();
@@ -106,6 +108,7 @@ public class CategoryDaoImpl extends JDBCConnection implements CategoryDao<Categ
 			statement = connect.prepareStatement(sql);
 			statement.setInt(1, t.getCatalog_id());
 			statement.setString(2, t.getName());
+			statement.setInt(3, t.getCatalog_id());
 			statement.executeUpdate();
 			System.out.println("Update catalog successfully!");
 			statement.close();

@@ -58,7 +58,7 @@ if (session.getAttribute("admin-username") == null) {
 														<c:out value="Out" />
 													</c:otherwise>
 												</c:choose></td>
-											<td>${product.discount }%</td>
+											<td>${product.discount}%</td>
 											<td>${product.created }</td>
 											<td>
 												<button class="btn btn-danger">

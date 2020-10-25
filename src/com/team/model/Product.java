@@ -27,6 +27,36 @@ public class Product {
 		this.created = created;
 	}
 
+	public Product(int catalog_id, String name, double price, String status, String description, int discount,
+			String image_link, LocalDateTime created) {
+		super();
+		this.catalog_id = catalog_id;
+		this.name = name;
+		this.price = price;
+		this.status = status;
+		this.description = description;
+		this.discount = discount;
+		this.image_link = image_link;
+		this.created = created;
+	}
+
+	public Product(int catalog_id, String name, double price, String status, String description, int discount,
+			LocalDateTime created) {
+		super();
+		this.catalog_id = catalog_id;
+		this.name = name;
+		this.price = price;
+		this.status = status;
+		this.description = description;
+		this.discount = discount;
+		this.created = created;
+	}
+
+	public Product(String image_link) {
+		super();
+		this.image_link = image_link;
+	}
+
 	public int getProduct_id() {
 		return product_id;
 	}

@@ -17,7 +17,7 @@
 							<div class="form-group">
 								<label for="input-1">ID</label> <input type="text"
 									class="form-control" readonly id="input-1" "ID" name="id"
-									value="${catelist.id}">
+									value="${catelist.catalog_id}">
 							</div>
 							<div class="form-group">
 								<label for="input-1">Name </label> <input type="text"

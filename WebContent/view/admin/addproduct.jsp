@@ -41,11 +41,11 @@
 							<div class="form-group">
 								<label for="input-2">Status</label>
 								<div>
-									<select class="form-control valid" id="input-6"
+									<input class="form-control valid" id="input-6"
 										name="product-status" required aria-invalid="false">
-										<option value="1">On</option>
-										<option value="0">Out</option>
-									</select>
+									<option value="1">On</option>
+									<option value="0">Out</option>
+									</input>
 								</div>
 							</div>
 							<div class="form-group">
@@ -66,22 +66,10 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-								<label for="input-2" class="col-form-label">Content</label>
-								<div>
-									<textarea class="form-control" rows="4" id="input-17"
-										name="product-content"></textarea>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="input-1">Image</label> <input type="file"
-									name="file" value="select images..." />
-							</div>
 							<div class="form-footer">
 								<button class="btn btn-danger">
 									<i class="fa fa-times"></i><a
-										href="${pageContext.request.contextPath}/admin/product/list">Cancel</a>
+										href="${pageContext.request.contextPath}/admin/list-product">Cancel</a>
 								</button>
 								<button type="submit" class="btn btn-success">
 									<i class="fa fa-check-square-o"></i>Add

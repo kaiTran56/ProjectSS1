@@ -27,7 +27,7 @@
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/cate/list">
+          <a href="${pageContext.request.contextPath}/admin/list-cate">
             <i class="zmdi zmdi-grid"></i> <span>Topic</span>
           </a>
         </li>
