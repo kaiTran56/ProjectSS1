@@ -2,7 +2,7 @@ package com.team.dao;
 
 import java.util.List;
 
-public interface Category<T> {
+public interface CategoryDao<T> {
 	List<T> getAll();
 
 	T get(String name);
