@@ -208,7 +208,7 @@
 		<servlet-class>com.team.controller.admin.AddCategoryController</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ListCategoryController</servlet-name>
+		<servlet-name>AddCategoryController</servlet-name>
 		<url-pattern>/admin/cate/add</url-pattern>
 	</servlet-mapping>
 </web-app>

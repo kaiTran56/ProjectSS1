@@ -9,7 +9,7 @@ public interface CategoryDao<T> {
 
 	void insert(T t);
 
-	void delete(String name);
+	void delete(int id);
 
 	void edit(T t);
 

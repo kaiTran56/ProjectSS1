@@ -7,20 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.team.dao.impl.CategoryDaoImpl;
-import com.team.model.Category;
-
 /**
- * Servlet implementation class AddCategoryController
+ * Servlet implementation class RemoveCategoryController
  */
 
-public class AddCategoryController extends HttpServlet {
+public class RemoveCategoryController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddCategoryController() {
+    public RemoveCategoryController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,17 +26,16 @@ public class AddCategoryController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/view/admin/addcate.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int catalog_id = Integer.parseInt(request.getParameter("cate-id"));
-		String name = request.getParameter("cate-name");
-		new CategoryDaoImpl().insert(new Category(catalog_id, name));
-		response.sendRedirect(request.getContextPath()+"/admin/list-cate");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
