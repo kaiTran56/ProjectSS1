@@ -29,7 +29,7 @@
                   <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
+                        
                         <th scope="col">Name</th>
                         <th scope="col">Parent</th>
                         <th scope="col">Action</th>
@@ -39,7 +39,7 @@
                     <tbody>
                   <c:forEach items="${catelist}" var="cate">
                       <tr>
-                        <td scope="row">${cate.id}</td>
+                        
                         <td>${cate.name}</td>
         				<td>
         					<c:choose>
@@ -52,9 +52,9 @@
                        	</c:choose>
         				</td>
         				 <td>
-                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/admin/cate/delete?id=${cate.id}">Remove</a></button>
+                         <button class="btn btn-danger"><a href="${pageContext.request.contextPath}/admin/cate/delete?id=${cate.catalog_id}">Remove</a></button>
                          
-                          <button class="btn btn-success"><a href="${pageContext.request.contextPath}/admin/cate/edit?id=${cate.id}">Edit</a></button>
+                          <button class="btn btn-success"><a href="${pageContext.request.contextPath}/admin/cate/edit?id=${cate.catalog_id}">Edit</a></button>
                         </td>
                      </tr>
                     </c:forEach>

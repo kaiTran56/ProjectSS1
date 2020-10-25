@@ -195,4 +195,20 @@
 		<servlet-name>EditBoardnewController</servlet-name>
 		<url-pattern>/admin/new/edit</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>ListCategoryController</servlet-name>
+		<servlet-class>com.team.controller.admin.ListCategoryController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListCategoryController</servlet-name>
+		<url-pattern>/admin/list-cate</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddCategoryController</servlet-name>
+		<servlet-class>com.team.controller.admin.AddCategoryController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListCategoryController</servlet-name>
+		<url-pattern>/admin/cate/add</url-pattern>
+	</servlet-mapping>
 </web-app>

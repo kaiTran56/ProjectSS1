@@ -11,7 +11,11 @@
                 <div class="card-title">Add Topic</div>
                 <hr>
                 <form action="${pageContext.request.contextPath}/admin/cate/add" method="post">
-                
+                	
+                	<div class="form-group">
+                    <label for="input-3">ID</label>
+                    <input type="text" class="form-control" id="input-3" placeholder="ID" name="cate-id">
+                  </div>
                   <div class="form-group">
                     <label for="input-1">Name of Topic</label>
                     <input type="text" class="form-control" id="input-1" placeholder="Name" name="cate-name">
@@ -20,7 +24,6 @@
 	                  <label for="input-2">Parent of Topic</label>
 	                  <div>
 	                    <select class="form-control valid" id="input-6" name="parent-id" required aria-invalid="false">
-	                        <option value="0">NULL</option>
 	                       <option value="1">New Product</option>
 	                    </select>
 	                  </div>
