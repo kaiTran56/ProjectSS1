@@ -36,7 +36,7 @@
 
 								<button class="btn btn-danger">
 									<i class="fa fa-times"></i><a
-										href="${pageContext.request.contextPath}/admin/new/list">Cancel</a>
+										href="${pageContext.request.contextPath}/admin/homepage">Cancel</a>
 								</button>
 								<button type="submit" class="btn btn-success">
 									<i class="fa fa-check-square-o"></i>Add
