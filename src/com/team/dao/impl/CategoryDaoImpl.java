@@ -42,7 +42,19 @@ public class CategoryDaoImpl extends JDBCConnection implements CategoryDao<Categ
 
 	@Override
 	public Category get(int id) {
-		// TODO Auto-generated method stub
+		connect = super.getConnectionJDBC();
+		String sql = "select * from catalog where catalog_id = ?;";
+		try {
+			statement = connect.prepareStatement(sql);
+			statement.setInt(1, id);
+			statement.executeUpdate();
+			System.out.println("Get successfull!");
+			statement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 

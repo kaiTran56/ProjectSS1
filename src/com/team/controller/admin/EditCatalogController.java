@@ -1,11 +1,14 @@
 package com.team.controller.admin;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.team.dao.impl.CategoryDaoImpl;
+import com.team.model.Category;
 
 /**
  * Servlet implementation class EditCatalogController
@@ -28,8 +31,10 @@ public class EditCatalogController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int catalog_id = Integer.parseInt(request.getParameter("id"));
+		Category categoryTemp = new CategoryDaoImpl().get(catalog_id);
+		request.setAttribute("catelist", categoryTemp);
+		request.getRequestDispatcher("/view/admin/editcate.jsp").forward(request, response);
 	}
 
 	/**
