@@ -41,7 +41,7 @@ public class CategoryDaoImpl extends JDBCConnection implements CategoryDao<Categ
 	}
 
 	@Override
-	public Category get(String name) {
+	public Category get(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

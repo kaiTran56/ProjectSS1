@@ -5,7 +5,7 @@ import java.util.List;
 public interface CategoryDao<T> {
 	List<T> getAll();
 
-	T get(String name);
+	T get(int id);
 
 	void insert(T t);
 
