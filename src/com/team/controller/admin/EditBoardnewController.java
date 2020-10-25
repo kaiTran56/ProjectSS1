@@ -49,7 +49,9 @@ public class EditBoardnewController extends HttpServlet {
 		String author = request.getParameter("new-author");
 		String image_link = request.getParameter("new-image_link");
 		LocalDateTime created = LocalDateTime.now();
-		Boardnew boardnew = new Boardnew(title, content, image_link, author, created)
+		Boardnew boardnew = new Boardnew(title, content, image_link, author, created);
+		new BoardnewDaoImpl().edit(boardnew);
+		response.sendRedirect(request.getContextPath()+ "/admin/list-boardnew");
 	}
 
 }

@@ -8,7 +8,7 @@
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-body">
-						<div class="card-title">Add News</div>
+						<div class="card-title">Add Image</div>
 						<hr>
 						<%-- <form action="${pageContext.request.contextPath}/admin/image/upload"
 							method="post">
@@ -26,8 +26,6 @@
 						<form method="post"
 							action="${pageContext.request.contextPath}/admin/image/upload"
 							encType="multipart/form-data">
-
-
 							<div class="form-group">
 								<label for="input-3">Image</label> <input type="file"
 									class="form-control" id="input-18" name="new-image_link"
