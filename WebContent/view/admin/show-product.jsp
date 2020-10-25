@@ -44,10 +44,10 @@ if (session.getAttribute("admin-username") == null) {
 									<c:forEach items="${productlist}" var="product">
 										<tr>
 											<td>${product.name }</td>
-											<%-- <td><img
+											<td><img
 												style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"
 												src="${pageContext.request.contextPath}/view/client/assets/images/products/img-test/${product.image_link}"
-												alt="${product.name}"></td> --%>
+												alt="${product.name}"></td>
 											<td>${product.catalog_id }</td>
 											<td>${product.price }</td>
 											<td><c:choose>
