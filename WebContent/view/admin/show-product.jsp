@@ -17,7 +17,8 @@ if (session.getAttribute("admin-username") == null) {
 		<div class="row mt-3">
 			<div class="col-lg-12">
 				<button class="add-catalog">
-					<a href="${pageContext.request.contextPath}/admin/product/add">Add Products</a>
+					<a href="${pageContext.request.contextPath}/admin/product/add">Add
+						Products</a>
 				</button>
 			</div>
 			<div class="col-lg-12">
@@ -28,7 +29,7 @@ if (session.getAttribute("admin-username") == null) {
 							<table class="table table-striped">
 								<thead>
 									<tr>
-										<th scope="col">#</th>
+
 										<th scope="col">Name</th>
 										<th scope="col">Image</th>
 										<th scope="col">Topic</th>
@@ -42,7 +43,6 @@ if (session.getAttribute("admin-username") == null) {
 								<tbody>
 									<c:forEach items="${productlist}" var="product">
 										<tr>
-											<th scope="row">${product.id }</th>
 											<td>${product.name }</td>
 											<td><img
 												style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"
