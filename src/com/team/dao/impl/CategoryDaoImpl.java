@@ -29,12 +29,15 @@ public class CategoryDaoImpl extends JDBCConnection implements CategoryDao<Categ
 				int catalog_id = result.getInt("catalog_id");
 				String name = result.getString("name");
 				listCategory.add(new Category(catalog_id, name));
+
 			}
+			statement.close();
+			connect.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return listCategory;
 	}
 
 	@Override
