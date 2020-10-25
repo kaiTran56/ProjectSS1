@@ -31,7 +31,7 @@ if (session.getAttribute("admin-username") == null) {
 									<tr>
 
 										<th scope="col">Name</th>
-
+										<th scope="col">Image</th>
 										<th scope="col">Topic</th>
 										<th scope="col">Prices</th>
 										<th scope="col">Status</th>
