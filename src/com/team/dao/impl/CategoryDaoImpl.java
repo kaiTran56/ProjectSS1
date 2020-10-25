@@ -3,6 +3,7 @@ package com.team.dao.impl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,19 @@ public class CategoryDaoImpl extends JDBCConnection implements CategoryDao<Categ
 	public List<Category> getAll() {
 		List<Category> listCategory = new ArrayList<Category>();
 		connect = super.getConnectionJDBC();
-		String sql 
+		String sql = "select * from catalog ;";
+		try {
+			statement = connect.prepareStatement(sql);
+			result = statement.executeQuery();
+			while (result.next()) {
+				int catalog_id = result.getInt("catalog_id");
+				String name = result.getString("name");
+				listCategory.add(new Category(catalog_id, name));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 
