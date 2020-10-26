@@ -2,7 +2,6 @@ package com.team.controller.admin;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -43,7 +42,6 @@ public class ImageUpload extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		System.out.println("HEllow!");
 		/*
@@ -67,7 +65,7 @@ public class ImageUpload extends HttpServlet {
 				 */
 
 				if (!contentType.equals("image/jpeg") && !contentType.equals("image/png")) {
-					out.println("only png or jpeg format image files supported");
+
 					continue;
 				}
 
@@ -84,15 +82,13 @@ public class ImageUpload extends HttpServlet {
 				System.out.println(url);
 				new BoardnewDaoImpl().insert(boardnew);
 				session.removeAttribute("boardnewTemp");
-				response.sendRedirect(request.getContextPath()+ "/admin/list-boardnew");
+				response.sendRedirect(request.getContextPath() + "/admin/list-boardnew");
 
 			}
 		} catch (FileUploadException e) {
 
-			out.println("upload fail");
 		} catch (Exception ex) {
 
-			out.println("can't save");
 		}
 	}
 

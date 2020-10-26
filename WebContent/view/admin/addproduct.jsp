@@ -15,6 +15,11 @@
 							action="${pageContext.request.contextPath}/admin/product/add">
 
 							<div class="form-group">
+								<label for="input-1">ID</label> <input type="text"
+									class="form-control" id="input-2" name="product-id">
+							</div>
+
+							<div class="form-group">
 								<label for="input-1">Name</label> <input type="text"
 									class="form-control" id="input-1" placeholder="Name"
 									name="product-name">
@@ -27,7 +32,7 @@
 									<select class="form-control valid" id="input-6"
 										name="product-cate" aria-invalid="false">
 										<c:forEach items="${catelist}" var="cate">
-											<option value="${cate.id }">${cate.name }</option>
+											<option value="${cate.catalog_id }">${cate.name }</option>
 										</c:forEach>
 									</select>
 								</div>
@@ -41,11 +46,11 @@
 							<div class="form-group">
 								<label for="input-2">Status</label>
 								<div>
-									<input class="form-control valid" id="input-6"
+									<select class="form-control valid" id="input-6"
 										name="product-status" required aria-invalid="false">
-									<option value="1">On</option>
-									<option value="0">Out</option>
-									</input>
+										<option value="1">On</option>
+										<option value="0">Out</option>
+									</select>
 								</div>
 							</div>
 							<div class="form-group">

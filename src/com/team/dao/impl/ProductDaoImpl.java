@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,15 +27,15 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 		try {
 			statement = connect.createStatement();
 			result = statement.executeQuery(sql);
-			while(result.next()) {
-				
+			while (result.next()) {
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return null;
+
+		return listProduct;
 	}
 
 	@Override
@@ -45,7 +46,27 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 
 	@Override
 	public void insert(Product t) {
-		// TODO Auto-generated method stub
+		connect = super.getConnectionJDBC();
+		String sql = "insert into product (product_id, catalog_id, name, price, status, description, discount, image_link, created) value(?,?,?,?,?,?,?,?,?);";
+		try {
+			preparedStatement = connect.prepareStatement(sql);
+			preparedStatement.setInt(1, t.getProduct_id());
+			preparedStatement.setInt(2, t.getCatalog_id());
+			preparedStatement.setString(3, t.getName());
+			preparedStatement.setDouble(4, t.getPrice());
+			preparedStatement.setString(5, t.getStatus());
+			preparedStatement.setString(6, t.getDescription());
+			preparedStatement.setInt(7, t.getDiscount());
+			preparedStatement.setString(8, t.getImage_link());
+			preparedStatement.setTimestamp(9, Timestamp.valueOf(t.getCreated()));
+			preparedStatement.executeUpdate();
+			System.out.println("insert product successfull");
+			preparedStatement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

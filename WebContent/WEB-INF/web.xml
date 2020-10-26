@@ -228,4 +228,20 @@
 		<servlet-name>EditCategoryController</servlet-name>
 		<url-pattern>/admin/cate/edit</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddProductController</servlet-name>
+		<servlet-class>com.team.controller.admin.AddProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddProductController</servlet-name>
+		<url-pattern>/admin/product/add</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ImageProductController</servlet-name>
+		<servlet-class>com.team.controller.admin.ImageProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImageProductController</servlet-name>
+		<url-pattern>/admin/image/upload/product</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -2,6 +2,7 @@ package com.team.controller.admin;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.team.dao.impl.CategoryDaoImpl;
+import com.team.model.Category;
 import com.team.model.Product;
 
 /**
@@ -32,6 +35,8 @@ public class AddProductController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		List<Category> listCate = new CategoryDaoImpl().getAll();
+		request.setAttribute("catelist", listCate);
 		request.getRequestDispatcher("/view/admin/addproduct.jsp").forward(request, response);
 	}
 
@@ -42,6 +47,8 @@ public class AddProductController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		int product_id = Integer.parseInt(request.getParameter("product-id"));
+
 		String name = request.getParameter("product-name");
 		int catalog_id = Integer.parseInt(request.getParameter("product-cate"));
 		double price = Double.parseDouble(request.getParameter("product-price"));
@@ -51,7 +58,9 @@ public class AddProductController extends HttpServlet {
 		LocalDateTime created = LocalDateTime.now();
 		Product product = new Product(catalog_id, name, price, status, description, discount, created);
 		session.setAttribute("productTemp", product);
-		response.sendRedirect(request.getContextPath() + "/view/admin/imageupload.jsp");
+		System.out.println("Product-id: " + product.getProduct_id());
+		session.setAttribute("idproduct", product_id);
+		response.sendRedirect(request.getContextPath() + "/view/admin/imageproductupload.jsp");
 	}
 
 }
