@@ -72,7 +72,11 @@
 										name="product-desc">${product.description}</textarea>
 								</div>
 							</div>
-
+							<div class="form-group">
+								<label for="input-1">Image</label> <input type="text"
+									class="form-control" id="input-1" readonly="readonly" placeholder="Price"
+									name="product-image" value = "${product.image_link }">
+							</div>
 							<div class="form-footer">
 								<button class="btn btn-danger">
 									<a href="${pageContext.request.contextPath}/admin/product/list">Cancels</a>

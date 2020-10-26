@@ -252,4 +252,16 @@
 		<servlet-name>EditProductController</servlet-name>
 		<url-pattern>/admin/product/edit</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>RemoveProductController</servlet-name>
+		<servlet-class>com.team.controller.admin.RemoveProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RemoveProductController</servlet-name>
+		<url-pattern>/admin/product/delete</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ListProductController</servlet-name>
+		<servlet-class>com.team.controller.admin.ListProductController</serlvet-class>
+	</servlet>
 </web-app>

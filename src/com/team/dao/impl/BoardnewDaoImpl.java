@@ -118,7 +118,8 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 
 	@Override
 	public void edit(Boardnew t) {
-		// TODO Auto-generated method stub
+		connect = super.getConnectionJDBC();
+		String sql = "update boardnew set ;";
 
 	}
 

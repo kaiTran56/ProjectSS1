@@ -13,7 +13,7 @@ public interface ProductDao<T> {
 
 	void edit(T t);
 
-	void delete(String name);
+	void delete(int id);
 
 	List<T> searchByName(String keyword);
 }

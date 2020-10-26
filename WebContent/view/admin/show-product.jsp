@@ -64,12 +64,12 @@ if (session.getAttribute("admin-username") == null) {
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/admin/product/delete?id=${product.id}">Remove</a>
+														href="${pageContext.request.contextPath}/admin/product/delete?id=${product.product_id}">Remove</a>
 												</button>
 
 												<button class="btn btn-success">
 													<a
-														href="${pageContext.request.contextPath}/admin/product/edit?id=${product.id}">Edit</a>
+														href="${pageContext.request.contextPath}/admin/product/edit?id=${product.product_id}">Edit</a>
 												</button>
 											</td>
 										</tr>

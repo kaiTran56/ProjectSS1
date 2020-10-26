@@ -8,7 +8,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.team.dao.impl.CategoryDaoImpl;
 import com.team.dao.impl.ProductDaoImpl;
@@ -38,7 +37,7 @@ public class EditProductController extends HttpServlet {
 			throws ServletException, IOException {
 		List<Category> listCate = new CategoryDaoImpl().getAll();
 		request.setAttribute("catelist", listCate);
-		//int id = Integer.parseInt(request.getParameter("id"));
+		// int id = Integer.parseInt(request.getParameter("id"));
 		Product productTemp = new ProductDaoImpl().get(1);
 		request.setAttribute("product", productTemp);
 		request.getRequestDispatcher("/view/admin/editproduct.jsp").forward(request, response);
@@ -50,7 +49,7 @@ public class EditProductController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
+		
 		int product_id = Integer.parseInt(request.getParameter("product-id"));
 
 		String name = request.getParameter("product-name");
@@ -59,13 +58,12 @@ public class EditProductController extends HttpServlet {
 		String status = request.getParameter("product-status");
 		int discount = Integer.parseInt(request.getParameter("product-discount"));
 		String description = request.getParameter("product-desc");
+		String image_link = request.getParameter("product-image");
 		LocalDateTime created = LocalDateTime.now();
-		Product product = new Product(catalog_id, name, price, status, description, discount, created);
-		session.setAttribute("productTemp", product);
-		session.setAttribute("tranform", "edit");
-		System.out.println("Product-id: " + product.getProduct_id());
-		session.setAttribute("idproduct", product_id);
-		response.sendRedirect(request.getContextPath() + "/view/admin/imageproductupload.jsp");
+		Product product = new Product(product_id, catalog_id, name, price, status, description, discount, image_link,
+				created);
+		new ProductDaoImpl().edit(product);
+		response.sendRedirect(request.getContextPath() + "/admin/list-product");
 	}
 
 }
