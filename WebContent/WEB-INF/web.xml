@@ -262,6 +262,10 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>ListProductController</servlet-name>
-		<servlet-class>com.team.controller.admin.ListProductController</serlvet-class>
+		<servlet-class>com.team.controller.admin.ListProductController</servlet-class>
 	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListProductController</servlet-name>
+		<url-pattern>/admin/list-product</url-pattern>
+	</servlet-mapping>
 </web-app>
