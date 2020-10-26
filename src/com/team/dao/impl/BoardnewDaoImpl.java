@@ -29,7 +29,7 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 			statement = connect.createStatement();
 			result = statement.executeQuery(sql);
 			while (result.next()) {
-				String boardnew_id = result.getString("boardnew_id");
+				int boardnew_id = result.getInt("boardnew_id");
 				String title = result.getString("title");
 				String content = result.getString("content");
 				String image_link = result.getString("image_link");
@@ -60,8 +60,8 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 			preparedStatement = connect.prepareStatement(sql);
 			preparedStatement.setInt(1, id);
 			result = preparedStatement.executeQuery();
-			while(result.next()) {
-				String boardnew_id = result.getString("boardnew_id");
+			while (result.next()) {
+				int boardnew_id = result.getInt("boardnew_id");
 				String title = result.getString("title");
 				String content = result.getString("content");
 				String image_link = result.getString("image_link");
@@ -69,12 +69,12 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
 				boardnew = new Boardnew(boardnew_id, title, content, image_link, author, created);
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return boardnew;
 	}
 
@@ -119,8 +119,22 @@ public class BoardnewDaoImpl extends JDBCConnection implements BoardnewDao<Board
 	@Override
 	public void edit(Boardnew t) {
 		connect = super.getConnectionJDBC();
-		String sql = "update boardnew set ;";
-
+		String sql = "update boardnew set title = ?, content = ?, author = ?,image_link = ?, created = ? where boardnew_id = ?;";
+		try {
+			preparedStatement = connect.prepareStatement(sql);
+			preparedStatement.setString(1, t.getTitle());
+			preparedStatement.setString(2, t.getContent());
+			preparedStatement.setString(3, t.getAuthor());
+			preparedStatement.setString(4, t.getImage_link());
+			preparedStatement.setTimestamp(5, Timestamp.valueOf(t.getCreated()));
+			preparedStatement.setInt(6, t.getBoardnew_id());
+			preparedStatement.executeUpdate();
+			preparedStatement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

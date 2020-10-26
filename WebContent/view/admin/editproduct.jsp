@@ -79,7 +79,7 @@
 							</div>
 							<div class="form-footer">
 								<button class="btn btn-danger">
-									<a href="${pageContext.request.contextPath}/admin/product/list">Cancels</a>
+									<a href="${pageContext.request.contextPath}/admin/list-product">Cancels</a>
 								</button>
 
 								<button type="submit" class="btn btn-success">Update</button>

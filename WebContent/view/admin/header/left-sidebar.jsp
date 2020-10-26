@@ -32,7 +32,7 @@
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/product/list">
+          <a href="${pageContext.request.contextPath}/admin/list-product">
             <i class="zmdi zmdi-widgets"></i> <span>List Products</span>
           </a>
         </li>

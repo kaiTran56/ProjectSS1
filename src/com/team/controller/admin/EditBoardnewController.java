@@ -17,7 +17,7 @@ import com.team.model.Boardnew;
 
 public class EditBoardnewController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private int inTemp;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -32,7 +32,7 @@ public class EditBoardnewController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int inTemp = Integer.parseInt(request.getParameter("boardnew-id"));
+		inTemp = Integer.parseInt(request.getParameter("boardnew-id"));
 		Boardnew boardnewTemp = new BoardnewDaoImpl().get(inTemp);
 		request.setAttribute("boardnew", boardnewTemp);
 		request.getRequestDispatcher("/view/admin/editboardnew.jsp").forward(request, response);
@@ -49,7 +49,7 @@ public class EditBoardnewController extends HttpServlet {
 		String author = request.getParameter("new-author");
 		String image_link = request.getParameter("new-image_link");
 		LocalDateTime created = LocalDateTime.now();
-		Boardnew boardnew = new Boardnew(title, content, image_link, author, created);
+		Boardnew boardnew = new Boardnew(inTemp, title, content, image_link, author, created);
 		new BoardnewDaoImpl().edit(boardnew);
 		response.sendRedirect(request.getContextPath()+ "/admin/list-boardnew");
 	}

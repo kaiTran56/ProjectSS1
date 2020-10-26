@@ -3,7 +3,7 @@ package com.team.model;
 import java.time.LocalDateTime;
 
 public class Boardnew {
-	private String boardnew_id;
+	private int boardnew_id;
 	private String title;
 	private String content;
 	private String image_link;
@@ -11,7 +11,7 @@ public class Boardnew {
 	private LocalDateTime created;
 	private String urlTemp;
 
-	public Boardnew(String boardnew_id, String title, String content, String image_link, String author,
+	public Boardnew(int boardnew_id, String title, String content, String image_link, String author,
 			LocalDateTime created) {
 		super();
 		this.boardnew_id = boardnew_id;
@@ -44,11 +44,11 @@ public class Boardnew {
 		this.image_link = image_link;
 	}
 
-	public String getBoardnew_id() {
+	public int getBoardnew_id() {
 		return boardnew_id;
 	}
 
-	public void setBoardnew_id(String boardnew_id) {
+	public void setBoardnew_id(int boardnew_id) {
 		this.boardnew_id = boardnew_id;
 	}
 
