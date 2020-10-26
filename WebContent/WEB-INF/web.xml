@@ -244,4 +244,12 @@
 		<servlet-name>ImageProductController</servlet-name>
 		<url-pattern>/admin/image/upload/product</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>EditProductController</servlet-name>
+		<servlet-class>com.team.controller.admin.EditProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditProductController</servlet-name>
+		<url-pattern>/admin/product/edit</url-pattern>
+	</servlet-mapping>
 </web-app>

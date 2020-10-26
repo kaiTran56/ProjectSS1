@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,6 +86,33 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	@Override
 	public List<Product> searchByName(String keyword) {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product get(int id) {
+		connect = super.getConnectionJDBC();
+		String sql = "select * from product where product_id = ?";
+		try {
+			preparedStatement = connect.prepareStatement(sql);
+			preparedStatement.setInt(1, id);
+			result = preparedStatement.executeQuery();
+			while (result.next()) {
+				int product_id = result.getInt("product_id");
+				int catalog_id = result.getInt("catalog_id");
+				String name = result.getString("name");
+				double price = result.getDouble("price");
+				String status = result.getString("status");
+				String description = result.getString("description");
+				int discount = result.getInt("discount");
+				String image_link = result.getString("image_link");
+				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
+				return new Product(product_id, catalog_id, name, price, status, description, discount, image_link, created);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 

@@ -6,6 +6,8 @@ public interface ProductDao<T> {
 	List<T> getAll();
 
 	T get(String keyword);
+	
+	T get(int id);
 
 	void insert(T t);
 

@@ -79,8 +79,15 @@ public class ImageProductController extends HttpServlet {
 				System.out.println((Integer) session.getAttribute("idproduct"));
 				product.setProduct_id((Integer) session.getAttribute("idproduct"));
 				product.setImage_link(url);
-				new ProductDaoImpl().insert(product);
+
+				if (session.getAttribute("tranform").equals("edit")) {
+					new ProductDaoImpl().edit(product);
+				} else {
+					new ProductDaoImpl().insert(product);
+				}
+
 				session.removeAttribute("productTemp");
+				session.removeAttribute("tranform");
 				response.sendRedirect(request.getContextPath() + "/admin/list-product");
 
 			}
