@@ -47,7 +47,7 @@ if (session.getAttribute("admin-username") == null) {
 											<td>${product.name }</td>
 											<td><img
 												style="width: 110px; height: 67px; object-fit: cover; border: 1px solid #fff;"
-												src="${pageContext.request.contextPath}/view/client/assets/images/products/img-test/${product.image_link}"
+												src="${pageContext.request.contextPath}/${product.urlTemp}"
 												alt="${product.name}"></td>
 											<td>${product.catalog_id }</td>
 											<td>${product.price }</td>

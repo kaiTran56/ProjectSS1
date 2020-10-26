@@ -24,7 +24,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	public List<Product> getAll() {
 		connect = super.getConnectionJDBC();
 		List<Product> listProduct = new ArrayList<Product>();
-		String sql = "select product_id, name, price, status, description, discount, image_link, created from product;";
+		String sql = "select product_id, catalog_id, name, price, status, description, discount, image_link, created from product;";
 		try {
 			statement = connect.createStatement();
 			result = statement.executeQuery(sql);

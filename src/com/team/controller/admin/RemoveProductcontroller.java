@@ -13,16 +13,8 @@ import com.team.dao.impl.ProductDaoImpl;
  * Servlet implementation class RemoveProductcontroller
  */
 
-public class RemoveProductcontroller extends HttpServlet {
+public class RemoveProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public RemoveProductcontroller() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse

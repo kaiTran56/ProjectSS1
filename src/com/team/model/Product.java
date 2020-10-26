@@ -12,7 +12,7 @@ public class Product {
 	private int discount;
 	private String image_link;
 	private LocalDateTime created;
-
+	private String urlTemp;
 	public Product(int product_id, int catalog_id, String name, double price, String status, String description,
 			int discount, String image_link, LocalDateTime created) {
 		super();
@@ -27,8 +27,8 @@ public class Product {
 		this.created = created;
 	}
 
-	public Product(int catalog_id, String name, double price, String status, String description,
-			int discount, LocalDateTime created) {
+	public Product(int catalog_id, String name, double price, String status, String description, int discount,
+			LocalDateTime created) {
 		super();
 		this.catalog_id = catalog_id;
 		this.name = name;
@@ -115,6 +115,14 @@ public class Product {
 
 	public void setCreated(LocalDateTime created) {
 		this.created = created;
+	}
+
+	public String getUrlTemp() {
+		String url = "C:\\Users\\Admin\\eclipse-workspace\\Project\\WebContent\\";
+		int len = this.getImage_link().length();
+		System.out.println("Address: " + this.getImage_link() + " The length: " + len);
+		urlTemp = this.getImage_link().substring(url.length(), len).replace("\\", "//");
+		return urlTemp;
 	}
 
 }
