@@ -27,7 +27,7 @@
 							<table class="table table-striped">
 								<thead>
 									<tr>
-										<th scope="col">#</th>
+
 										<th scope="col">ID of Order</th>
 										<th scope="col">ID of Product</th>
 										<th scope="col">Name</th>
@@ -38,15 +38,11 @@
 								<tbody>
 									<c:forEach items="${orderedlist}" var="orderedlist">
 										<tr>
-											<td scope="row">${orderedlist.id}</td>
-											<td>${orderedlist.transaction_id}</td>
+											<td scope="row">${orderedlist.ordered_id}</td>
+
 											<td>${orderedlist.product_id}</td>
-											<c:forEach items="${products}" var="products">
-												<c:if test="${products.id == orderedlist.product_id}">
-													<td>${products.name}</td>
-													<td>${products.price}VNĐ</td>
-												</c:if>
-											</c:forEach>
+											<td>${orderedlist.name}</td>
+											<td>${orderedlist.price}</td>
 											<td>${orderedlist.amount}</td>
 
 										</tr>

@@ -268,4 +268,41 @@
 		<servlet-name>ListProductController</servlet-name>
 		<url-pattern>/admin/list-product</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>ListOrderedDetailController</servlet-name>
+		<servlet-class>com.team.controller.admin.ListOrderedDetailController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListOrderedDetailController</servlet-name>
+		<url-pattern>/admin/list-ordereddetail</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>BoardnewListController</servlet-name>
+		<servlet-class>com.team.controller.BoardnewListController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardnewListController</servlet-name>
+		<url-pattern>/user/new/list</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BoardnewDetailListController</servlet-name>
+		<servlet-class>com.team.controller.BoardnewDetailListController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoardnewDetailListController</servlet-name>
+		<url-pattern>/user/new/list/detail</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CheckoutController</servlet-name>
+		<servlet-class>com.team.controller.CheckoutController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckoutController</servlet-name>
+		<url-pattern>/user/checkout</url-pattern>
+	</servlet-mapping>
 </web-app>

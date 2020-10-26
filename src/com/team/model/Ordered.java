@@ -1,12 +1,14 @@
 package com.team.model;
 
 public class Ordered {
-	private String ordered_id;
-	private String product_id;
-	private String transaction_id;
+	private int ordered_id;
+	private int product_id;
+	private int transaction_id;
 	private int amount;
+	private String name;
+	private double price;
 
-	public Ordered(String ordered_id, String product_id, String transaction_id, int amount) {
+	public Ordered(int ordered_id, int product_id, int transaction_id, int amount) {
 		super();
 		this.ordered_id = ordered_id;
 		this.product_id = product_id;
@@ -14,27 +16,36 @@ public class Ordered {
 		this.amount = amount;
 	}
 
-	public String getOrdered_id() {
+	public Ordered(int ordered_id, int product_id, int amount, String name, double price) {
+		super();
+		this.ordered_id = ordered_id;
+		this.product_id = product_id;
+		this.amount = amount;
+		this.name = name;
+		this.price = price;
+	}
+
+	public int getOrdered_id() {
 		return ordered_id;
 	}
 
-	public void setOrdered_id(String ordered_id) {
+	public void setOrdered_id(int ordered_id) {
 		this.ordered_id = ordered_id;
 	}
 
-	public String getProduct_id() {
+	public int getProduct_id() {
 		return product_id;
 	}
 
-	public void setProduct_id(String product_id) {
+	public void setProduct_id(int product_id) {
 		this.product_id = product_id;
 	}
 
-	public String getTransaction_id() {
+	public int getTransaction_id() {
 		return transaction_id;
 	}
 
-	public void setTransaction_id(String transaction_id) {
+	public void setTransaction_id(int transaction_id) {
 		this.transaction_id = transaction_id;
 	}
 
@@ -44,6 +55,28 @@ public class Ordered {
 
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return name + amount;
 	}
 
 }

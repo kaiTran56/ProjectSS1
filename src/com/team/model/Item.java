@@ -13,6 +13,14 @@ public class Item implements Serializable {
 	private int amount;
 	private double price;
 
+	public Item(String id, Product product, int amount, double price) {
+		super();
+		this.id = id;
+		this.product = product;
+		this.amount = amount;
+		this.price = price;
+	}
+
 	public String getId() {
 		return id;
 	}

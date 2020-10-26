@@ -37,18 +37,18 @@
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/order/list">
+          <a href="${pageContext.request.contextPath}/admin/list-order">
             <i class="zmdi zmdi-shopping-cart"></i> <span>Orders</span>
           </a>
         </li>
         
         <li>
-          <a href="${pageContext.request.contextPath}/admin/order/list-detail">
+          <a href="${pageContext.request.contextPath}/admin/list-ordereddetail">
             <i class="zmdi zmdi-shopping-cart"></i> <span>Details Orders</span>
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/review/list">
+          <a href="${pageContext.request.contextPath}/admin/list-review">
             <i class="zmdi zmdi-calendar-check"></i> <span>Review</span>
           </a>   
         </li>
