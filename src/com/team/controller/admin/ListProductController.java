@@ -34,7 +34,7 @@ public class ListProductController extends HttpServlet {
 			throws ServletException, IOException {
 		List<Product> listProduct = new ProductDaoImpl().getAll();
 		request.setAttribute("productlist", listProduct);
-		System.out.println("URL: "+listProduct.get(1).getUrlTemp());
+
 		request.getRequestDispatcher("/view/admin/show-product.jsp").forward(request, response);
 	}
 }

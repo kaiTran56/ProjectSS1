@@ -116,6 +116,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 			preparedStatement = connect.prepareStatement(sql);
 			preparedStatement.setInt(1, id);
 			preparedStatement.executeUpdate();
+			System.out.println("Delete Product successfully!");
 			preparedStatement.close();
 			connect.close();
 		} catch (SQLException e) {
