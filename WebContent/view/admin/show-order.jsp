@@ -46,12 +46,12 @@
 									<c:forEach items="${order}" var="order">
 										<tr>
 
-											<td>${order.user_name}</td>
-											<td>${order.user_mail}</td>
-											<td>${order.user_phone}</td>
-											<td>${order.address}</td>
+											<td>${order.user.name}</td>
+											<td>${order.user.email}</td>
+											<td>${order.user.phone}</td>
+											<td>${order.user.address}</td>
 											<td>${order.message}</td>
-											<td>${order.amount}VND</td>
+											<td>${order.payment}VND</td>
 
 											<td><c:choose>
 													<c:when test="${order.status == NULL}">
@@ -70,7 +70,7 @@
 											<td>
 												<button class="btn btn-danger">
 													<a
-														href="${pageContext.request.contextPath}/admin/order/delete?id=${order.id}">Remove</a>
+														href="${pageContext.request.contextPath}/admin/order/delete?id=${order.transaction_id}">Remove</a>
 												</button>
 											</td>
 										</tr>

@@ -48,7 +48,7 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 						created);
 				listTransaction.add(transactions);
 			}
-
+			System.out.println("List transactions successfully!");
 			result.close();
 			statement.close();
 			connect.close();
@@ -80,6 +80,6 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 
 	public static void main(String[] args) {
 		System.out.println("Run");
-		System.out.println("Test: "+new TransactionDaoImpl().getAll().toString());
+		System.out.println("Test: " + new TransactionDaoImpl().getAll().toString());
 	}
 }
