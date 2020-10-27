@@ -276,6 +276,14 @@
 		<servlet-name>ListOrderedDetailController</servlet-name>
 		<url-pattern>/admin/list-ordereddetail</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>ListOrderController</servlet-name>
+		<servlet-class>com.team.controller.admin.ListOrderController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListOrderController</servlet-name>
+		<url-pattern>/admin/list-order</url-pattern>
+	</servlet-mapping>
 	
 	
 	
