@@ -56,7 +56,8 @@ public class AddProductController extends HttpServlet {
 		int discount = Integer.parseInt(request.getParameter("product-discount"));
 		String description = request.getParameter("product-desc");
 		LocalDateTime created = LocalDateTime.now();
-		Product product = new Product(catalog_id, name, price, status, description, discount, created);
+		int quantity = Integer.parseInt(request.getParameter("product-quantity"));
+		Product product = new Product(catalog_id, name, price, status, description, discount, created, quantity);
 		session.setAttribute("productTemp", product);
 		System.out.println("Product-id: " + product.getProduct_id());
 		session.setAttribute("idproduct", product_id);

@@ -49,7 +49,7 @@ public class EditProductController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		int product_id = Integer.parseInt(request.getParameter("product-id"));
 
 		String name = request.getParameter("product-name");
@@ -57,11 +57,13 @@ public class EditProductController extends HttpServlet {
 		double price = Double.parseDouble(request.getParameter("product-price"));
 		String status = request.getParameter("product-status");
 		int discount = Integer.parseInt(request.getParameter("product-discount"));
+		int quantity = Integer.parseInt(request.getParameter("product-quantity"));
 		String description = request.getParameter("product-desc");
 		String image_link = request.getParameter("product-image");
 		LocalDateTime created = LocalDateTime.now();
+
 		Product product = new Product(product_id, catalog_id, name, price, status, description, discount, image_link,
-				created);
+				created, quantity);
 		new ProductDaoImpl().edit(product);
 		response.sendRedirect(request.getContextPath() + "/admin/list-product");
 	}

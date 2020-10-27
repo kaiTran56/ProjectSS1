@@ -36,6 +36,7 @@ if (session.getAttribute("admin-username") == null) {
 										<th scope="col">Prices</th>
 										<th scope="col">Status</th>
 										<th scope="col">Sale</th>
+										<th scope="col">Quantity</th>
 										<th scope="col">Created Day</th>
 										<th scope="col">Action</th>
 									</tr>
@@ -60,6 +61,7 @@ if (session.getAttribute("admin-username") == null) {
 													</c:otherwise>
 												</c:choose></td>
 											<td>${product.discount}%</td>
+											<td>${product.quantity }</td>
 											<td>${product.created }</td>
 											<td>
 												<button class="btn btn-danger">

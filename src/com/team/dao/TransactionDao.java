@@ -9,6 +9,6 @@ public interface TransactionDao<T> {
 
 	void edit(T t);
 
-	void delete(String name);
+	void delete(int id);
 
 }

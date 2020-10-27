@@ -13,8 +13,10 @@ public class Product {
 	private String image_link;
 	private LocalDateTime created;
 	private String urlTemp;
+	private int quantity;
+
 	public Product(int product_id, int catalog_id, String name, double price, String status, String description,
-			int discount, String image_link, LocalDateTime created) {
+			int discount, String image_link, LocalDateTime created, int quantity) {
 		super();
 		this.product_id = product_id;
 		this.catalog_id = catalog_id;
@@ -25,10 +27,11 @@ public class Product {
 		this.discount = discount;
 		this.image_link = image_link;
 		this.created = created;
+		this.quantity = quantity;
 	}
 
 	public Product(int catalog_id, String name, double price, String status, String description, int discount,
-			LocalDateTime created) {
+			LocalDateTime created, int quantity) {
 		super();
 		this.catalog_id = catalog_id;
 		this.name = name;
@@ -37,6 +40,7 @@ public class Product {
 		this.description = description;
 		this.discount = discount;
 		this.created = created;
+		this.quantity = quantity;
 	}
 
 	public Product(int product_id, String image_link) {
@@ -123,6 +127,18 @@ public class Product {
 		System.out.println("Address: " + this.getImage_link() + " The length: " + len);
 		urlTemp = this.getImage_link().substring(url.length(), len).replace("\\", "//");
 		return urlTemp;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public void setUrlTemp(String urlTemp) {
+		this.urlTemp = urlTemp;
 	}
 
 }

@@ -24,7 +24,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	public List<Product> getAll() {
 		connect = super.getConnectionJDBC();
 		List<Product> listProduct = new ArrayList<Product>();
-		String sql = "select product_id, catalog_id, name, price, status, description, discount, image_link, created from product;";
+		String sql = "select product_id, catalog_id, name, price, status, description, discount, image_link, created, quantity from product;";
 		try {
 			statement = connect.createStatement();
 			result = statement.executeQuery(sql);
@@ -38,8 +38,10 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 				int discount = result.getInt("discount");
 				String image_link = result.getString("image_link");
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
+				int quantity = result.getInt("quantity");
 				Product product = new Product(product_id, catalog_id, name, price, status, description, discount,
-						image_link, created);
+						image_link, created, quantity);
+
 				listProduct.add(product);
 			}
 		} catch (SQLException e) {
@@ -59,7 +61,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	@Override
 	public void insert(Product t) {
 		connect = super.getConnectionJDBC();
-		String sql = "insert into product (product_id, catalog_id, name, price, status, description, discount, image_link, created) value(?,?,?,?,?,?,?,?,?);";
+		String sql = "insert into product (product_id, catalog_id, name, price, status, description, discount, image_link, created, quantity) value(?,?,?,?,?,?,?,?,?, ?);";
 		try {
 			preparedStatement = connect.prepareStatement(sql);
 			preparedStatement.setInt(1, t.getProduct_id());
@@ -85,7 +87,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 	@Override
 	public void edit(Product t) {
 		connect = super.getConnectionJDBC();
-		String sql = "update product set product_id = ?,catalog_id = ?, name = ?, price = ?, status = ? , description=?, discount = ? , image_link = ?, created = ? where product_id = ?;";
+		String sql = "update product set product_id = ?,catalog_id = ?, name = ?, price = ?, status = ? , description=?, discount = ? , image_link = ?, created = ?, quantity = ? where product_id = ?;";
 		try {
 			preparedStatement = connect.prepareStatement(sql);
 			preparedStatement.setInt(1, t.getProduct_id());
@@ -97,7 +99,8 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 			preparedStatement.setInt(7, t.getDiscount());
 			preparedStatement.setString(8, t.getImage_link());
 			preparedStatement.setTimestamp(9, Timestamp.valueOf(t.getCreated()));
-			preparedStatement.setInt(10, t.getProduct_id());
+			preparedStatement.setInt(10, t.getQuantity());
+			preparedStatement.setInt(11, t.getProduct_id());
 			preparedStatement.executeUpdate();
 			System.out.println("Edit product successfull");
 			preparedStatement.close();
@@ -149,8 +152,9 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 				int discount = result.getInt("discount");
 				String image_link = result.getString("image_link");
 				LocalDateTime created = result.getTimestamp("created").toLocalDateTime();
+				int quantity = result.getInt("quantity");
 				return new Product(product_id, catalog_id, name, price, status, description, discount, image_link,
-						created);
+						created, quantity);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

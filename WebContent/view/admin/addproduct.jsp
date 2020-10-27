@@ -64,6 +64,11 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<label for="input-1">Quantity</label> <input type="text"
+									class="form-control" id="input-1" placeholder="Price"
+									name="product-quantity">
+							</div>
+							<div class="form-group">
 								<label for="input-2" class="col-form-label">Description</label>
 								<div>
 									<textarea class="form-control" rows="4" id="input-17"

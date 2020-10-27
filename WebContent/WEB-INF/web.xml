@@ -284,7 +284,14 @@
 		<servlet-name>ListOrderController</servlet-name>
 		<url-pattern>/admin/list-order</url-pattern>
 	</servlet-mapping>
-	
+	<servlet>
+		<servlet-name>RemoveOrderController</servlet-name>
+		<servlet-class>com.team.controller.admin.RemoveOrderController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RemoveOrderController</servlet-name>
+		<url-pattern>/admin/order/delete</url-pattern>
+	</servlet-mapping>
 	
 	
 	

@@ -73,8 +73,20 @@ public class TransactionDaoImpl extends JDBCConnection implements TransactionDao
 	}
 
 	@Override
-	public void delete(String name) {
-		// TODO Auto-generated method stub
+	public void delete(int id) {
+		connect = super.getConnectionJDBC();
+		String sql = "delete from transactions where transaction_id = ?";
+		try {
+			statement = connect.prepareStatement(sql);
+			statement.setInt(1, id);
+			statement.executeUpdate();
+			System.out.println("Delete transaction successfully!");
+			statement.close();
+			connect.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
