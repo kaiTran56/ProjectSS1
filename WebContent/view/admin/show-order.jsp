@@ -35,6 +35,8 @@
 										<th scope="col">Note</th>
 										<th scope="col">Payment</th>
 										<th scope="col">Status</th>
+										<th scope = "col">Product</th> 
+										<th scope = "col">Quantity</th> 
 										<th scope="col">Created Day</th>
 										<th scope="col">Actions</th>
 
@@ -59,6 +61,9 @@
 														<c:out value="Not Finished!" />
 													</c:otherwise>
 												</c:choose></td>
+												
+											<td>${order.ordered.name}</td>	
+											<td>${order.created}</td>
 											<td>${order.created}</td>
 
 
