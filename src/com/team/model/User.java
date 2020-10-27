@@ -33,6 +33,14 @@ public class User {
 		this.created = created;
 	}
 
+	public User(String name, String email, String phone, String address) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.address = address;
+	}
+
 	public User(String email, String password) {
 		super();
 		this.email = email;

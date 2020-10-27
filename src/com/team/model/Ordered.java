@@ -24,6 +24,13 @@ public class Ordered {
 		this.name = name;
 		this.price = price;
 	}
+	
+
+	public Ordered(int amount, String name) {
+		super();
+		this.amount = amount;
+		this.name = name;
+	}
 
 	public int getOrdered_id() {
 		return ordered_id;

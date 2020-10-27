@@ -6,11 +6,12 @@ public class Transactions {
 	private int transaction_id;
 	private User user;
 	private String message;
-	private String payment;
+	private double payment;
 	private String status;
 	private LocalDateTime created;
+	private Ordered ordered;
 
-	public Transactions(int transaction_id, User user, String message, String payment, String status,
+	public Transactions(int transaction_id, User user, String message, double payment, String status, Ordered ordered,
 			LocalDateTime created) {
 		super();
 		this.transaction_id = transaction_id;
@@ -19,6 +20,7 @@ public class Transactions {
 		this.payment = payment;
 		this.status = status;
 		this.created = created;
+		this.ordered = ordered;
 	}
 
 	public int getTransaction_id() {
@@ -45,11 +47,11 @@ public class Transactions {
 		this.message = message;
 	}
 
-	public String getPayment() {
+	public double getPayment() {
 		return payment;
 	}
 
-	public void setPayment(String payment) {
+	public void setPayment(double payment) {
 		this.payment = payment;
 	}
 
@@ -67,6 +69,18 @@ public class Transactions {
 
 	public void setCreated(LocalDateTime created) {
 		this.created = created;
+	}
+
+	public Ordered getOrdered() {
+		return ordered;
+	}
+
+	public void setOrdered(Ordered ordered) {
+		this.ordered = ordered;
+	}
+	
+	public String toString() {
+		return message;
 	}
 
 }
