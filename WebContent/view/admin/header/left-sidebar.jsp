@@ -48,7 +48,7 @@
           </a>
         </li>
         <li>
-          <a href="${pageContext.request.contextPath}/admin/list-review">
+          <a href="${pageContext.request.contextPath}/admin/list-order">
             <i class="zmdi zmdi-calendar-check"></i> <span>Review</span>
           </a>   
         </li>

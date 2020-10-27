@@ -73,6 +73,7 @@ public class ProductDaoImpl extends JDBCConnection implements ProductDao<Product
 			preparedStatement.setInt(7, t.getDiscount());
 			preparedStatement.setString(8, t.getImage_link());
 			preparedStatement.setTimestamp(9, Timestamp.valueOf(t.getCreated()));
+			preparedStatement.setInt(10, t.getQuantity());
 			preparedStatement.executeUpdate();
 			System.out.println("insert product successfull");
 			preparedStatement.close();
