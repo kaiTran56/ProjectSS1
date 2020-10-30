@@ -44,7 +44,7 @@ public class ProfileUser extends HttpServlet {
 			User user = userDao.get(email);
 			request.setAttribute("createdDay", user.getCreated());
 			request.setAttribute("userDetail", user);
-			request.getRequestDispatcher("/view/user/prof/profile.jsp").forward(request, response);
+			request.getRequestDispatcher("/view/user/template/profile.jsp").forward(request, response);
 		}
 	}
 

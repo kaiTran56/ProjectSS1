@@ -32,7 +32,7 @@ public class LogoutController extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.removeAttribute("username");
 		session.invalidate();
-		request.getRequestDispatcher("/view/user/homepage").forward(request, response);;
+		response.sendRedirect(request.getContextPath() + "/view/user/homepage");
 	}
 
 }

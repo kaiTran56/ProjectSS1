@@ -26,7 +26,8 @@ public class HomePageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/view/user/template/index2.jsp").forward(request, response);
+		request.getRequestDispatcher("/view/user/template/index.jsp").forward(request, response);
+		//response.sendRedirect(request.getContextPath()+"/view/user/template/index.jsp");
 	}
 
 	

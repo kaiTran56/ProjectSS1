@@ -66,6 +66,12 @@
 		<servlet-name>LogoutController</servlet-name>
 		<url-pattern>/view/logout</url-pattern>
 	</servlet-mapping>
+	
+	
+	
+	
+	
+	
 	<servlet>
 		<servlet-name>HomepageAdmin</servlet-name>
 		<servlet-class>com.team.controller.admin.HomepageController</servlet-class>
