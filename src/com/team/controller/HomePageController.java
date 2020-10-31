@@ -13,22 +13,23 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HomePageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public HomePageController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/view/user/template/index.jsp").forward(request, response);
-		//response.sendRedirect(request.getContextPath()+"/view/user/template/index.jsp");
+	public HomePageController() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("/view/user/template/index.jsp").forward(request, response);
+
+	}
+
 }
